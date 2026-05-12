@@ -28,17 +28,19 @@
         
         .font-heading { font-family: 'Space Grotesk', sans-serif; }
         
-        /* BANNER BACKGROUND */
+        /* BANNER BACKGROUND (Menggunakan Link WPFC Baru) */
         .main-banner-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background-image: linear-gradient(to bottom, rgba(10, 15, 29, 0.7), var(--bg-dark)), 
-            url('https://i.imgur.com/k6lP0Wn.png');
-            background-size: 100% 100%; background-position: center; background-repeat: no-repeat;
+            url('https://i.wpfc.ml/e8/phcn34.png');
+            background-size: 100% 100%; 
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .page-content {
             display: none; height: calc(100vh - 80px);
-            overflow-y: auto; padding: 2rem; animation: fadeIn 0.4s ease;
+            overflow-y: auto; padding: 2.5rem; animation: fadeIn 0.4s ease;
         }
 
         .active-page { display: flex; flex-direction: column; }
@@ -69,7 +71,7 @@
         <div class="max-w-6xl mx-auto px-6 h-full flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="logo-navbar">
-                    <img src="https://i.ibb.co.com/1t0b51qg/1000113996.png" class="w-full h-full object-cover">
+                    <img src="https://i.ibb.co.com/1t0b51qg/1000113996.png" class="w-full h-full object-cover" alt="Logo Septopia">
                 </div>
                 <span class="font-black text-xl uppercase text-white tracking-tighter italic">Septopia <span class="text-blue-500">PS</span></span>
             </div>
@@ -78,10 +80,10 @@
                 <div onclick="showPage('home')" id="n-home" class="nav-link active py-7">Home</div>
                 <div onclick="showPage('stats')" id="n-stats" class="nav-link py-7">Statistic</div>
                 <div onclick="showPage('connect')" id="n-connect" class="nav-link py-7">Connect</div>
-                <div onclick="window.open('https://wa.me/6281525742110')" class="nav-link py-7 text-green-400">Support</div>
+                <div onclick="window.open('https://wa.me/6281525742110')" class="nav-link py-7">Support</div>
                 <div onclick="showPage('faq')" id="n-faq" class="nav-link py-7">FAQ</div>
                 <div onclick="window.open('https://discord.gg/A75xzKjSrM')" class="nav-link py-7 text-blue-400">Discord</div>
-                <div onclick="showPage('shop')" id="n-shop" class="px-5 py-2 bg-blue-600 rounded-lg font-black text-[10px] uppercase text-white cursor-pointer">Shop</div>
+                <div onclick="showPage('shop')" id="n-shop" class="px-5 py-2 bg-blue-600 rounded-lg font-black text-[10px] uppercase text-white cursor-pointer hover:bg-blue-500">Shop</div>
             </div>
         </div>
     </nav>
@@ -96,7 +98,7 @@
 
         <div id="p-stats" class="page-content">
             <div class="max-w-6xl mx-auto py-12">
-                <h2 class="font-heading text-4xl uppercase italic mb-10 text-center text-white">Server Statistics</h2>
+                <h2 class="font-heading text-4xl uppercase italic mb-10 text-center">Server Statistics</h2>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
                     <div class="glass-card p-8 rounded-3xl border-b-4 border-blue-500">
                         <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Players Online</p>
@@ -120,14 +122,16 @@
 
         <div id="p-connect" class="page-content">
             <div class="max-w-6xl mx-auto py-12 text-center">
-                <h2 class="font-heading text-4xl uppercase italic mb-10 text-white">How to Connect</h2>
+                <h2 class="font-heading text-4xl uppercase italic mb-10">How to Connect</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 leading-relaxed">
                     <div class="glass-card p-8 rounded-[2rem] border-t-4 border-green-500">
                         <h4 class="font-black text-white mb-4 italic uppercase">Android</h4>
+                        <p class="text-[11px] text-slate-400 mb-6">Download APK Septopia, install, dan langsung main.</p>
                         <a href="https://www.mediafire.com/file/jjnsgutlodhz1zs/SeptopiaPS.apk/file" target="_blank" class="block w-full py-3 bg-green-600 rounded-xl font-black text-[10px] text-white">DOWNLOAD APK</a>
                     </div>
                     <div class="glass-card p-8 rounded-[2rem] border-t-4 border-blue-500">
                         <h4 class="font-black text-white mb-4 italic uppercase">Windows</h4>
+                        <p class="text-[11px] text-slate-400 mb-4">Edit <span class="text-white font-mono">hosts</span> file:</p>
                         <code class="text-yellow-500 text-[10px] font-mono break-all italic">91.134.85.13 growtopia1.com</code>
                     </div>
                     <div class="glass-card p-8 rounded-[2rem] border-t-4 border-purple-500">
@@ -143,15 +147,15 @@
         </div>
 
         <div id="p-faq" class="page-content">
-            <div class="max-w-3xl mx-auto py-12">
-                <h2 class="font-heading text-4xl uppercase italic mb-10 text-center text-white">F.A.Q</h2>
-                <div class="glass-card p-8 rounded-3xl border-l-4 border-green-500 mb-6">
+            <div class="max-w-3xl mx-auto py-12 text-center">
+                <h2 class="font-heading text-4xl uppercase italic mb-10">F.A.Q</h2>
+                <div class="glass-card p-8 rounded-3xl border-l-4 border-green-500 mb-6 text-left">
                     <p class="text-white font-bold mb-2 uppercase italic tracking-wider">Lupa Password Akun?</p>
                     <p class="text-slate-400 text-sm">Hubungi admin melalui menu Support atau Discord dengan menyertakan bukti kepemilikan akun.</p>
                 </div>
-                <div class="glass-card p-8 rounded-3xl border-l-4 border-blue-500">
-                    <p class="text-white font-bold mb-2 uppercase italic tracking-wider">Cara Beli Item / Rank?</p>
-                    <p class="text-slate-400 text-sm">Buka menu Shop dan klik tombol "Order via WA" untuk langsung terhubung ke admin resmi kami.</p>
+                <div class="glass-card p-8 rounded-3xl border-l-4 border-blue-500 text-left">
+                    <p class="text-white font-bold mb-2 uppercase italic tracking-wider">Server Discord Resmi?</p>
+                    <p class="text-slate-400 text-sm">Klik menu Discord di atas untuk bergabung dengan komunitas solid Septopia.</p>
                 </div>
             </div>
         </div>
@@ -161,19 +165,20 @@
                 <h2 class="font-heading text-4xl uppercase italic mb-10 text-yellow-500">Septopia Store</h2>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="glass-card p-8 rounded-[2rem] border-t-4 border-blue-500">
-                        <h4 class="font-black text-white italic uppercase">Diamond Locks</h4>
+                        <h4 class="font-black text-white italic uppercase tracking-widest">Diamond Locks</h4>
                         <div class="text-3xl font-black text-white mt-4 italic">Rp 5.000 <span class="text-[10px] text-slate-500">/ 10 DL</span></div>
-                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-blue-600 rounded-xl font-black text-[10px] uppercase text-white">Order via WA</button>
+                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-blue-600 rounded-xl font-black text-[10px] uppercase text-white shadow-lg">Buy via WA</button>
                     </div>
                     <div class="glass-card p-8 rounded-[2rem] border-4 border-yellow-500 relative transform scale-105">
-                        <h4 class="font-black text-white italic uppercase">Premium Rank</h4>
+                        <div class="absolute -top-3 right-8 bg-yellow-500 text-black text-[9px] font-black px-4 py-1 rounded-full uppercase">Best Seller</div>
+                        <h4 class="font-black text-white italic uppercase tracking-widest">Premium Rank</h4>
                         <div class="text-3xl font-black text-white mt-4 italic">Rp 50.000</div>
-                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-yellow-500 rounded-xl font-black text-[10px] uppercase text-black">Order via WA</button>
+                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-yellow-500 rounded-xl font-black text-[10px] uppercase text-black shadow-lg">Buy via WA</button>
                     </div>
                     <div class="glass-card p-8 rounded-[2rem] border-t-4 border-purple-500">
-                        <h4 class="font-black text-white italic uppercase">Custom Item</h4>
-                        <div class="text-3xl font-black text-white mt-4 italic">NEGO</div>
-                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-purple-600 rounded-xl font-black text-[10px] uppercase text-white">Order via WA</button>
+                        <h4 class="font-black text-white italic uppercase tracking-widest text-purple-400">Custom Item</h4>
+                        <div class="text-3xl font-black text-white mt-4 italic uppercase">Nego</div>
+                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-purple-600 rounded-xl font-black text-[10px] uppercase text-white shadow-lg">Contact Owner</button>
                     </div>
                 </div>
             </div>
@@ -200,7 +205,7 @@
                 const res = await fetch(PROXY).then(r => r.json());
                 const d = JSON.parse(res.contents).state;
                 document.getElementById('p-online').innerText = d.players_online || 0;
-            } catch (e) { }
+            } catch (e) { console.log("Stat Sync Error"); }
         }
         update(); setInterval(update, 30000);
     </script>
