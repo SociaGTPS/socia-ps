@@ -28,12 +28,11 @@
         
         .font-heading { font-family: 'Space Grotesk', sans-serif; }
         
-        /* BANNER BACKGROUND UTAMA */
         .main-banner-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            background-image: linear-gradient(to bottom, rgba(10, 15, 29, 0.7), var(--bg-dark)), 
-            url('https://i.wpfc.ml/e8/phcn34.png');
-            background-size: 100% 100%; 
+            background-image: linear-gradient(to bottom, rgba(10, 15, 29, 0.8), var(--bg-dark)), 
+            url('https://i.ibb.co.com/1t0b51qg/1000113996.png');
+            background-size: cover; 
             background-position: center;
             background-repeat: no-repeat;
         }
@@ -80,9 +79,8 @@
                 <div onclick="showPage('home')" id="n-home" class="nav-link active py-7">Home</div>
                 <div onclick="showPage('stats')" id="n-stats" class="nav-link py-7">Statistic</div>
                 <div onclick="showPage('connect')" id="n-connect" class="nav-link py-7">Connect</div>
-                <div onclick="window.open('https://wa.me/6281525742110')" class="nav-link py-7">Support</div>
+                <div onclick="showPage('community')" id="n-community" class="nav-link py-7">Community</div>
                 <div onclick="showPage('faq')" id="n-faq" class="nav-link py-7">FAQ</div>
-                <div onclick="window.open('https://discord.gg/A75xzKjSrM')" class="nav-link py-7 text-blue-400">Discord</div>
                 <div onclick="showPage('shop')" id="n-shop" class="px-5 py-2 bg-blue-600 rounded-lg font-black text-[10px] uppercase text-white cursor-pointer hover:bg-blue-500">Shop</div>
             </div>
         </div>
@@ -98,23 +96,39 @@
 
         <div id="p-stats" class="page-content">
             <div class="max-w-6xl mx-auto py-12">
-                <h2 class="font-heading text-4xl uppercase italic mb-10 text-center">Server Statistics</h2>
+                <h2 class="font-heading text-4xl uppercase italic mb-10 text-center">Server Data Analysis</h2>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                    <div class="glass-card p-8 rounded-3xl border-b-4 border-blue-500">
+                    <div class="glass-card p-6 rounded-3xl border-b-4 border-blue-500">
                         <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Players Online</p>
-                        <h3 class="text-5xl font-black text-white" id="p-online">0</h3>
+                        <h3 class="text-4xl font-black text-white" id="p-online">0</h3>
                     </div>
-                    <div class="glass-card p-8 rounded-3xl border-b-4 border-green-500">
-                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Status</p>
+                    <div class="glass-card p-6 rounded-3xl border-b-4 border-green-500">
+                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Server Status</p>
                         <h3 class="text-2xl font-black text-green-400 uppercase italic">Online</h3>
                     </div>
-                    <div class="glass-card p-8 rounded-3xl border-b-4 border-yellow-500">
-                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Total World</p>
-                        <h3 class="text-4xl font-black text-white italic">2,481</h3>
+                    <div class="glass-card p-6 rounded-3xl border-b-4 border-yellow-500">
+                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Total Worlds</p>
+                        <h3 class="text-3xl font-black text-white italic">2,481</h3>
                     </div>
-                    <div class="glass-card p-8 rounded-3xl border-b-4 border-purple-500">
-                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Account Created</p>
-                        <h3 class="text-4xl font-black text-white italic">12,500+</h3>
+                    <div class="glass-card p-6 rounded-3xl border-b-4 border-purple-500">
+                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Registered</p>
+                        <h3 class="text-3xl font-black text-white italic">12,500+</h3>
+                    </div>
+                    <div class="glass-card p-6 rounded-3xl border-b-4 border-red-500">
+                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Daily Active</p>
+                        <h3 class="text-3xl font-black text-white italic">850+</h3>
+                    </div>
+                    <div class="glass-card p-6 rounded-3xl border-b-4 border-orange-500">
+                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Uptime</p>
+                        <h3 class="text-3xl font-black text-white italic">99.9%</h3>
+                    </div>
+                    <div class="glass-card p-6 rounded-3xl border-b-4 border-pink-500">
+                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Staff Team</p>
+                        <h3 class="text-3xl font-black text-white italic">12</h3>
+                    </div>
+                    <div class="glass-card p-6 rounded-3xl border-b-4 border-cyan-500">
+                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-2 tracking-widest">Version</p>
+                        <h3 class="text-3xl font-black text-white italic italic">V.4.12</h3>
                     </div>
                 </div>
             </div>
@@ -122,25 +136,49 @@
 
         <div id="p-connect" class="page-content">
             <div class="max-w-6xl mx-auto py-12 text-center">
-                <h2 class="font-heading text-4xl uppercase italic mb-10">How to Connect</h2>
+                <h2 class="font-heading text-4xl uppercase italic mb-10">Fast Connection Guide</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 leading-relaxed">
-                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-green-500">
-                        <h4 class="font-black text-white mb-4 italic uppercase">Android</h4>
-                        <p class="text-[11px] text-slate-400 mb-6">Download APK Septopia, install, dan langsung main.</p>
-                        <a href="https://www.mediafire.com/file/jjnsgutlodhz1zs/SeptopiaPS.apk/file" target="_blank" class="block w-full py-3 bg-green-600 rounded-xl font-black text-[10px] text-white">DOWNLOAD APK</a>
+                    <div class="glass-card p-10 rounded-[2rem] border-t-4 border-green-500">
+                        <h4 class="font-black text-white text-xl mb-4 italic uppercase">Android</h4>
+                        <p class="text-sm text-slate-300 mb-6 font-medium">Download APK Septopia, install, dan langsung gas main.</p>
+                        <a href="https://www.mediafire.com/file/jjnsgutlodhz1zs/SeptopiaPS.apk/file" target="_blank" class="block w-full py-4 bg-green-600 rounded-xl font-black text-xs text-white uppercase tracking-widest">DOWNLOAD APK</a>
                     </div>
-                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-blue-500">
-                        <h4 class="font-black text-white mb-4 italic uppercase">Windows</h4>
-                        <p class="text-[11px] text-slate-400 mb-4">Edit <span class="text-white font-mono">hosts</span> file:</p>
-                        <code class="text-yellow-500 text-[10px] font-mono break-all italic">91.134.85.13 growtopia1.com</code>
+                    <div class="glass-card p-10 rounded-[2rem] border-t-4 border-blue-500">
+                        <h4 class="font-black text-white text-xl mb-4 italic uppercase">Windows</h4>
+                        <p class="text-sm text-slate-300 mb-4 font-medium">Edit <span class="text-white font-mono bg-black/30 px-2 py-1 rounded">hosts</span> file:</p>
+                        <code class="text-yellow-500 text-sm font-bold font-mono break-all italic bg-black/40 p-3 block rounded-lg">91.134.85.13 growtopia1.com</code>
                     </div>
-                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-purple-500">
-                        <h4 class="font-black text-white mb-4 italic uppercase text-sm">iOS (Surge)</h4>
-                        <code class="text-blue-400 text-[9px] break-all">https://dash.gtps.cloud/ios/5678</code>
+                    <div class="glass-card p-10 rounded-[2rem] border-t-4 border-purple-500">
+                        <h4 class="font-black text-white text-xl mb-4 italic uppercase">iOS / Surge</h4>
+                        <p class="text-sm text-slate-300 mb-4 font-medium">Gunakan link Surge ini:</p>
+                        <code class="text-blue-400 text-[11px] font-bold break-all bg-black/40 p-3 block rounded-lg">https://dash.gtps.cloud/ios/5678</code>
                     </div>
-                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-orange-500">
-                        <h4 class="font-black text-white mb-4 italic uppercase text-sm">macOS</h4>
-                        <p class="text-[10px] text-slate-500">Edit /etc/hosts via terminal.</p>
+                    <div class="glass-card p-10 rounded-[2rem] border-t-4 border-orange-500">
+                        <h4 class="font-black text-white text-xl mb-4 italic uppercase">macOS</h4>
+                        <p class="text-sm text-slate-300 font-medium">Edit <span class="text-white">/etc/hosts</span> melalui terminal Mac kamu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p-community" class="page-content">
+            <div class="max-w-5xl mx-auto py-12 text-center">
+                <h2 class="font-heading text-4xl uppercase italic mb-10">Our Community</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="glass-card p-8 rounded-3xl border-b-4 border-blue-500">
+                        <h4 class="font-black text-white mb-4 italic uppercase">Discord Server</h4>
+                        <p class="text-sm text-slate-400 mb-6 font-medium">Info update, event, dan tempat nongkrong.</p>
+                        <button onclick="window.open('https://discord.gg/A75xzKjSrM')" class="w-full py-4 bg-blue-600 rounded-xl font-black text-xs text-white">JOIN DISCORD</button>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl border-b-4 border-green-500">
+                        <h4 class="font-black text-white mb-4 italic uppercase">WhatsApp Group</h4>
+                        <p class="text-sm text-slate-400 mb-6 font-medium">Diskusi bareng player di WhatsApp.</p>
+                        <button onclick="window.open('https://chat.whatsapp.com/L1234567890')" class="w-full py-4 bg-green-600 rounded-xl font-black text-xs text-white italic">JOIN WA KOMUNITAS</button>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl border-b-4 border-yellow-500">
+                        <h4 class="font-black text-white mb-4 italic uppercase">Hubungi Admin</h4>
+                        <p class="text-sm text-slate-400 mb-6 font-medium">Bantuan teknis atau beli digital role.</p>
+                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full py-4 bg-yellow-500 rounded-xl font-black text-xs text-black">WHATSAPP ADMIN</button>
                     </div>
                 </div>
             </div>
@@ -150,12 +188,12 @@
             <div class="max-w-3xl mx-auto py-12 text-center">
                 <h2 class="font-heading text-4xl uppercase italic mb-10">F.A.Q</h2>
                 <div class="glass-card p-8 rounded-3xl border-l-4 border-green-500 mb-6 text-left">
-                    <p class="text-white font-bold mb-2">Lupa Password Akun?</p>
-                    <p class="text-slate-400 text-sm">Hubungi admin melalui menu Support atau Discord dengan menyertakan bukti kepemilikan akun.</p>
+                    <p class="text-white font-bold mb-2 uppercase italic tracking-wider">Lupa Password Akun?</p>
+                    <p class="text-slate-400 text-sm">Hubungi admin melalui menu Community atau Discord.</p>
                 </div>
                 <div class="glass-card p-8 rounded-3xl border-l-4 border-blue-500 text-left">
-                    <p class="text-white font-bold mb-2">Server Discord Resmi?</p>
-                    <p class="text-slate-400 text-sm">Klik menu Discord di atas untuk bergabung dengan komunitas kami.</p>
+                    <p class="text-white font-bold mb-2 uppercase italic tracking-wider">Apakah Server Aman?</p>
+                    <p class="text-slate-400 text-sm">Sangat aman, Septopia menggunakan proteksi database berlapis.</p>
                 </div>
             </div>
         </div>
@@ -190,12 +228,9 @@
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(p => p.classList.remove('active-page'));
-            
             const links = document.querySelectorAll('.nav-link');
             links.forEach(l => l.classList.remove('active'));
-
             document.getElementById('p-' + pageId).classList.add('active-page');
-            
             if(document.getElementById('n-' + pageId)) {
                 document.getElementById('n-' + pageId).classList.add('active');
             }
