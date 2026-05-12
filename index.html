@@ -28,7 +28,7 @@
         
         .font-heading { font-family: 'Space Grotesk', sans-serif; }
         
-        /* BANNER BACKGROUND (Menggunakan Link WPFC Baru) */
+        /* BANNER BACKGROUND UTAMA */
         .main-banner-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background-image: linear-gradient(to bottom, rgba(10, 15, 29, 0.7), var(--bg-dark)), 
@@ -150,12 +150,12 @@
             <div class="max-w-3xl mx-auto py-12 text-center">
                 <h2 class="font-heading text-4xl uppercase italic mb-10">F.A.Q</h2>
                 <div class="glass-card p-8 rounded-3xl border-l-4 border-green-500 mb-6 text-left">
-                    <p class="text-white font-bold mb-2 uppercase italic tracking-wider">Lupa Password Akun?</p>
+                    <p class="text-white font-bold mb-2">Lupa Password Akun?</p>
                     <p class="text-slate-400 text-sm">Hubungi admin melalui menu Support atau Discord dengan menyertakan bukti kepemilikan akun.</p>
                 </div>
                 <div class="glass-card p-8 rounded-3xl border-l-4 border-blue-500 text-left">
-                    <p class="text-white font-bold mb-2 uppercase italic tracking-wider">Server Discord Resmi?</p>
-                    <p class="text-slate-400 text-sm">Klik menu Discord di atas untuk bergabung dengan komunitas solid Septopia.</p>
+                    <p class="text-white font-bold mb-2">Server Discord Resmi?</p>
+                    <p class="text-slate-400 text-sm">Klik menu Discord di atas untuk bergabung dengan komunitas kami.</p>
                 </div>
             </div>
         </div>
@@ -190,9 +190,12 @@
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(p => p.classList.remove('active-page'));
+            
             const links = document.querySelectorAll('.nav-link');
             links.forEach(l => l.classList.remove('active'));
+
             document.getElementById('p-' + pageId).classList.add('active-page');
+            
             if(document.getElementById('n-' + pageId)) {
                 document.getElementById('n-' + pageId).classList.add('active');
             }
