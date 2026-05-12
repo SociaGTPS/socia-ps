@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEPTOPIA GTPS | Official Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Grotesk:wght@700&display=swap');
+        
+        :root { 
+            --accent: #3b82f6; 
+            --gold: #fbbf24; 
+            --bg-dark: #0a0f1d; 
+            --card-bg: #161d2f; 
+        }
+        
+        body, html { 
+            margin: 0; padding: 0; height: 100%; overflow: hidden; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg-dark); 
+            color: #e2e8f0; 
+        }
+        
+        .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* BANNER UNIVERSAL (Tetap Muncul di Semua Halaman) */
+        .main-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background-image: linear-gradient(to bottom, rgba(10, 15, 29, 0.85), var(--bg-dark)), 
+            url('https://i.ibb.co.com/S7RhqWGB/Gemini-Generated-Image-yn9jrcyn9jrcyn9j.png');
+            background-size: cover; background-position: center;
+        }
+
+        .page-content {
+            display: none;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            padding: 2rem;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .active-page { display: flex; flex-direction: column; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.99); } to { opacity: 1; transform: scale(1); } }
+
+        .nav-link {
+            font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
+            color: #94a3b8; transition: all 0.3s; cursor: pointer;
+        }
+        .nav-link:hover, .nav-link.active { color: white; border-bottom: 2px solid var(--accent); }
+
+        .glass-card { 
+            background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.08); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        /* LOGO BOX DI NAVBAR */
+        .logo-box { width: 40px; height: 40px; border-radius: 10px; border: 2px solid var(--gold); overflow: hidden; }
+    </style>
+</head>
+<body>
+
+    <div class="main-bg"></div>
+
+    <nav class="fixed top-0 w-full z-50 bg-[#0a0f1d]/90 backdrop-blur-md border-b border-white/5 h-20">
+        <div class="max-w-6xl mx-auto px-6 h-full flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="logo-box">
+                    <img src="https://i.ibb.co.com/1t0b51qg/1000113996.png" class="w-full h-full object-cover">
+                </div>
+                <span class="font-black text-xl uppercase text-white tracking-tighter italic">Septopia <span class="text-blue-500">PS</span></span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 items-center h-full">
+                <div onclick="showPage('home')" id="n-home" class="nav-link active py-7">Home</div>
+                <div onclick="showPage('stats')" id="n-stats" class="nav-link py-7">Statistic</div>
+                <div onclick="showPage('connect')" id="n-connect" class="nav-link py-7">Connect</div>
+                <div onclick="window.open('https://wa.me/6281525742110')" class="nav-link py-7">Support</div>
+                <div onclick="showPage('faq')" id="n-faq" class="nav-link py-7">FAQ</div>
+                <div onclick="window.open('https://discord.gg/A75xzKjSrM')" class="nav-link py-7 text-blue-400">Discord</div>
+                <div onclick="showPage('shop')" id="n-shop" class="px-5 py-2 bg-blue-600 rounded-lg font-black text-[10px] uppercase text-white cursor-pointer hover:bg-blue-500 transition-all">Shop</div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="mt-20">
+        
+        <div id="p-home" class="page-content active-page items-center justify-center text-center">
+            <img src="https://i.ibb.co.com/1t0b51qg/1000113996.png" class="w-32 h-32 rounded-3xl border-4 border-yellow-500/30 mb-8 shadow-2xl">
+            <h1 class="font-heading text-6xl md:text-8xl font-black italic uppercase text-white leading-none">Septopia <span class="text-blue-500">PS</span></h1>
+            <p class="mt-6 text-slate-300 max-w-xl text-lg font-medium">Server private Growtopia paling stabil dengan fitur eksklusif dan ekonomi terjaga.</p>
+        </div>
+
+        <div id="p-stats" class="page-content">
+            <div class="max-w-4xl mx-auto py-12">
+                <h2 class="font-heading text-4xl uppercase italic mb-10 text-center">Server Statistics</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card p-10 rounded-[2.5rem] text-center border-b-4 border-blue-500">
+                        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Players Online</p>
+                        <h3 class="text-6xl font-black text-white" id="p-online">0</h3>
+                    </div>
+                    <div class="glass-card p-10 rounded-[2.5rem] text-center border-b-4 border-green-500">
+                        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Server Status</p>
+                        <h3 class="text-4xl font-black text-green-400 uppercase italic">Online</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p-connect" class="page-content">
+            <div class="max-w-4xl mx-auto py-12">
+                <h2 class="font-heading text-4xl uppercase italic mb-10 text-center">Connect To Server</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-card p-10 rounded-[2.5rem] border-t-4 border-green-500">
+                        <h4 class="text-2xl font-black mb-4 italic uppercase">Android</h4>
+                        <p class="text-slate-400 mb-8 text-sm">Download APK resmi kami untuk akses instan tanpa setting.</p>
+                        <a href="https://www.mediafire.com/file/jjnsgutlodhz1zs/SeptopiaPS.apk/file" target="_blank" class="block text-center py-4 bg-green-600 rounded-xl font-black text-[10px] uppercase text-white">Download APK</a>
+                    </div>
+                    <div class="glass-card p-10 rounded-[2.5rem] border-t-4 border-blue-500">
+                        <h4 class="text-2xl font-black mb-4 italic uppercase">Windows</h4>
+                        <p class="text-slate-400 mb-4 text-sm font-bold">Edit File Hosts:</p>
+                        <div class="bg-black/60 p-5 rounded-2xl border border-white/5">
+                            <code class="text-yellow-500 text-[10px] font-mono block">91.134.85.13 growtopia1.com</code>
+                            <code class="text-yellow-500 text-[10px] font-mono block">91.134.85.13 growtopia2.com</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p-faq" class="page-content">
+            <div class="max-w-3xl mx-auto py-12">
+                <h2 class="font-heading text-4xl uppercase italic mb-12 text-center">F.A.Q</h2>
+                <div class="space-y-4">
+                    <div class="glass-card p-8 rounded-3xl">
+                        <h5 class="text-white font-black uppercase text-xs mb-3 italic text-blue-400"># Server Info</h5>
+                        <p class="text-white font-bold mb-2">Berapa Player Online di Septopia?</p>
+                        <p class="text-slate-400 text-sm">Kamu bisa cek jumlah pemain secara real-time di menu Statistic.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl">
+                        <h5 class="text-white font-black uppercase text-xs mb-3 italic text-blue-400"># Account</h5>
+                        <p class="text-white font-bold mb-2">Lupa Password / Akun Bermasalah?</p>
+                        <p class="text-slate-400 text-sm">Silakan hubungi tim Support melalui WhatsApp yang tersedia di menu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p-shop" class="page-content">
+            <div class="max-w-5xl mx-auto py-12">
+                <h2 class="font-heading text-4xl uppercase italic mb-10 text-center text-yellow-500">Septopia Store</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-blue-500">
+                        <h4 class="font-black text-white italic uppercase tracking-widest">10 Diamond Locks</h4>
+                        <div class="text-3xl font-black text-white mt-4 italic">Rp 5.000</div>
+                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-blue-600 rounded-xl font-black text-[10px] uppercase text-white shadow-lg shadow-blue-600/20">Buy via WhatsApp</button>
+                    </div>
+                    <div class="glass-card p-8 rounded-[2rem] border-4 border-yellow-500">
+                        <h4 class="font-black text-white italic uppercase tracking-widest">Premium Rank</h4>
+                        <div class="text-3xl font-black text-white mt-4 italic">Rp 50.000</div>
+                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-yellow-500 rounded-xl font-black text-[10px] uppercase text-black shadow-lg shadow-yellow-500/20">Buy via WhatsApp</button>
+                    </div>
+                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-purple-500">
+                        <h4 class="font-black text-white italic uppercase tracking-widest">Custom Item</h4>
+                        <div class="text-3xl font-black text-white mt-4 italic uppercase">Nego</div>
+                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-purple-600 rounded-xl font-black text-[10px] uppercase text-white shadow-lg shadow-purple-600/20">Chat Owner</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // FUNGSI PINDAH HALAMAN
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(p => p.classList.remove('active-page'));
+            
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(l => l.classList.remove('active'));
+
+            document.getElementById('p-' + pageId).classList.add('active-page');
+            
+            if(document.getElementById('n-' + pageId)) {
+                document.getElementById('n-' + pageId).classList.add('active');
+            }
+        }
+
+        // SYNC PLAYER STATS
+        async function update() {
+            const API = "https://api.gtps.cloud/api/server/public/5678";
+            const PROXY = `https://api.allorigins.win/get?url=${encodeURIComponent(API)}&t=${Date.now()}`;
+            try {
+                const res = await fetch(PROXY).then(r => r.json());
+                const d = JSON.parse(res.contents).state;
+                document.getElementById('p-online').innerText = d.players_online || 0;
+            } catch (e) { console.log("Stat Sync Error"); }
+        }
+        update(); setInterval(update, 30000);
+    </script>
+</body>
+</html>
