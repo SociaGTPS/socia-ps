@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEPTOPIA GTPS | Official Website</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://i.ibb.co/1t0b51qg/1000113996.png">
+    <link rel="icon" type="image/png" href="https://i.ibb.co.com/1t0b51qg/1000113996.png">
 
-    <title>SEPTOPIA GTPS | Official Portal</title>
-    
+    <!-- Tailwind & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Grotesk:wght@700&display=swap');
@@ -17,41 +17,41 @@
             --accent: #3b82f6; 
             --gold: #fbbf24; 
             --bg-dark: #0a0f1d; 
-            --card-bg: rgba(22, 29, 47, 0.8); 
+            --card-bg: rgba(22, 29, 47, 0.7); 
         }
         
         body, html { 
-            margin: 0; padding: 0; height: 100%; overflow: hidden; 
+            margin: 0; padding: 0; height: 100%; width: 100%;
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: var(--bg-dark); 
-            color: #e2e8f0; 
+            color: #e2e8f0;
+            overflow-x: hidden;
         }
-        
-        .font-heading { font-family: 'Space Grotesk', sans-serif; }
-        
-        /* FIX BACKGROUND IMAGE */
+
+        /* FIX: BACKGROUND IMAGE */
         .main-banner-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: -1;
-            /* Menggunakan direct link i.ibb.co */
-            background: linear-gradient(to bottom, rgba(10, 15, 29, 0.6), #0a0f1d), 
-                        url('https://i.ibb.co/JjrsshG7/banner.png');
+            z-index: -1; /* Supaya di belakang konten */
+            background: linear-gradient(to bottom, rgba(10, 15, 29, 0.7), #0a0f1d), 
+                        url('https://i.ibb.co.com/JjrsshG7/banner.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            filter: brightness(0.8); /* Memberi sedikit efek gelap agar konten menonjol */
+            filter: brightness(0.9);
         }
 
+        .font-heading { font-family: 'Space Grotesk', sans-serif; }
+
+        /* Page Content Logic */
         .page-content {
             display: none; 
-            height: calc(100vh - 80px);
-            overflow-y: auto; 
+            min-height: calc(100vh - 80px);
             padding: 2.5rem; 
-            animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeIn 0.4s ease-out;
         }
 
         .active-page { display: flex; flex-direction: column; }
@@ -61,50 +61,55 @@
             to { opacity: 1; transform: translateY(0); } 
         }
 
+        /* Glassmorphism Cards */
+        .glass-card { 
+            background: var(--card-bg); 
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--accent);
+            background: rgba(22, 29, 47, 0.9);
+        }
+
         .nav-link {
-            font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
-            color: #94a3b8; transition: all 0.3s; cursor: pointer;
+            cursor: pointer;
+            transition: all 0.3s;
             position: relative;
+            color: #94a3b8;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
         }
         .nav-link:hover, .nav-link.active { color: white; }
         .nav-link.active::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -8px;
             left: 0;
             width: 100%;
             height: 2px;
             background: var(--accent);
         }
 
-        .glass-card { 
-            background: var(--card-bg); 
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            transition: all 0.3s ease;
-        }
-        .glass-card:hover { transform: translateY(-5px); border-color: var(--accent); background: rgba(22, 29, 47, 0.95); }
-
-        .logo-navbar { width: 40px; height: 40px; border-radius: 10px; border: 2px solid var(--gold); overflow: hidden; }
-        
         /* Custom Scrollbar */
-        .page-content::-webkit-scrollbar { width: 6px; }
-        .page-content::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.5); border-radius: 10px; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0f1d; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
     </style>
 </head>
 <body>
 
-    <!-- BACKGROUND ELEMENT -->
     <div class="main-banner-bg"></div>
 
     <!-- NAVBAR -->
-    <nav class="fixed top-0 w-full z-50 bg-[#0a0f1d]/80 backdrop-blur-lg border-b border-white/5 h-20">
+    <nav class="fixed top-0 w-full z-50 bg-[#0a0f1d]/90 backdrop-blur-md border-b border-white/5 h-20">
         <div class="max-w-6xl mx-auto px-6 h-full flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="logo-navbar">
-                    <img src="https://i.ibb.co/1t0b51qg/1000113996.png" class="w-full h-full object-cover" alt="Logo Septopia">
-                </div>
+                <img src="https://i.ibb.co.com/1t0b51qg/1000113996.png" class="w-10 h-10 rounded-xl border border-yellow-500/50 shadow-lg" alt="Logo">
                 <span class="font-black text-xl uppercase text-white tracking-tighter italic">Septopia <span class="text-blue-500">PS</span></span>
             </div>
             
@@ -114,150 +119,144 @@
                 <div onclick="showPage('connect')" id="n-connect" class="nav-link">Connect</div>
                 <div onclick="showPage('community')" id="n-community" class="nav-link">Community</div>
                 <div onclick="showPage('faq')" id="n-faq" class="nav-link">FAQ</div>
-                <div onclick="showPage('shop')" id="n-shop" class="px-5 py-2 bg-blue-600 rounded-lg font-black text-[10px] uppercase text-white cursor-pointer hover:bg-blue-500 transition-all">Shop</div>
+                <div onclick="showPage('shop')" id="n-shop" class="px-5 py-2 bg-blue-600 rounded-lg font-black text-[11px] uppercase text-white cursor-pointer hover:bg-blue-500 transition-all shadow-lg shadow-blue-900/20">Shop</div>
             </div>
         </div>
     </nav>
 
     <main class="mt-20">
         
-        <!-- PAGE: HOME -->
+        <!-- HOME -->
         <div id="p-home" class="page-content active-page items-center justify-center text-center">
-            <img src="https://i.ibb.co/1t0b51qg/1000113996.png" alt="Septopia Logo" class="w-32 h-32 rounded-3xl border-4 border-yellow-500/30 mb-8 shadow-2xl animate-bounce">
+            <img src="https://i.ibb.co.com/1t0b51qg/1000113996.png" alt="Logo" class="w-32 h-32 rounded-3xl border-4 border-yellow-500/20 mb-8 shadow-2xl animate-pulse">
             <h1 class="font-heading text-6xl md:text-8xl font-black italic uppercase text-white leading-none">Septopia <span class="text-blue-500">PS</span></h1>
-            <p class="mt-6 text-slate-300 max-w-xl text-lg font-medium italic bg-black/20 backdrop-blur-sm p-4 rounded-xl">
+            <p class="mt-6 text-slate-300 max-w-xl text-lg font-medium italic bg-black/30 backdrop-blur-md p-4 rounded-2xl border border-white/5">
                 "Server private paling stabil dengan fitur eksklusif & komunitas solid."
             </p>
+            <div class="mt-10 flex gap-4">
+                <button onclick="showPage('connect')" class="px-8 py-4 bg-white text-black font-black uppercase rounded-xl hover:bg-slate-200 transition-all">Play Now</button>
+                <button onclick="showPage('community')" class="px-8 py-4 bg-blue-600/20 text-white border border-blue-500/50 font-black uppercase rounded-xl hover:bg-blue-600/40 transition-all">Join Discord</button>
+            </div>
         </div>
 
-        <!-- PAGE: STATISTIC (8 Items) -->
+        <!-- STATISTIC -->
         <div id="p-stats" class="page-content">
             <div class="max-w-6xl mx-auto py-12">
                 <h2 class="font-heading text-4xl uppercase italic mb-10 text-center text-white">Live Data Server</h2>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                    <div class="glass-card p-6 rounded-3xl border-b-4 border-blue-500">
+                    <div class="glass-card p-8 rounded-3xl border-b-4 border-blue-500">
                         <p class="text-[10px] font-bold text-slate-400 uppercase mb-2 tracking-widest">Players Online</p>
-                        <h3 class="text-4xl font-black text-white" id="p-online">0</h3>
+                        <h3 class="text-5xl font-black text-white" id="p-online">0</h3>
                     </div>
-                    <div class="glass-card p-6 rounded-3xl border-b-4 border-green-500">
+                    <div class="glass-card p-8 rounded-3xl border-b-4 border-green-500">
                         <p class="text-[10px] font-bold text-slate-400 uppercase mb-2 tracking-widest">Status</p>
                         <h3 class="text-2xl font-black text-green-400 uppercase italic">Online</h3>
                     </div>
-                    <div class="glass-card p-6 rounded-3xl border-b-4 border-yellow-500">
+                    <div class="glass-card p-8 rounded-3xl border-b-4 border-yellow-500">
                         <p class="text-[10px] font-bold text-slate-400 uppercase mb-2 tracking-widest">Total World</p>
                         <h3 class="text-3xl font-black text-white italic">2,481</h3>
                     </div>
-                    <div class="glass-card p-6 rounded-3xl border-b-4 border-purple-500">
+                    <div class="glass-card p-8 rounded-3xl border-b-4 border-purple-500">
                         <p class="text-[10px] font-bold text-slate-400 uppercase mb-2 tracking-widest">Account Created</p>
                         <h3 class="text-3xl font-black text-white italic">12,500+</h3>
                     </div>
-                    <div class="glass-card p-6 rounded-3xl border-b-4 border-red-500">
-                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-2 tracking-widest">Active Player</p>
-                        <h3 class="text-3xl font-black text-white italic">850+</h3>
-                    </div>
-                    <div class="glass-card p-6 rounded-3xl border-b-4 border-orange-500">
-                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-2 tracking-widest">Uptime</p>
-                        <h3 class="text-3xl font-black text-white italic">99.9%</h3>
-                    </div>
-                    <div class="glass-card p-6 rounded-3xl border-b-4 border-pink-500">
-                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-2 tracking-widest">Staff Team</p>
-                        <h3 class="text-3xl font-black text-white italic">12</h3>
-                    </div>
-                    <div class="glass-card p-6 rounded-3xl border-b-4 border-cyan-500">
-                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-2 tracking-widest">Version</p>
-                        <h3 class="text-3xl font-black text-white italic">V.4.12</h3>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- PAGE: CONNECT (4 Items) -->
+        <!-- CONNECT -->
         <div id="p-connect" class="page-content">
             <div class="max-w-6xl mx-auto py-12 text-center">
                 <h2 class="font-heading text-4xl uppercase italic mb-10 text-white">How to Play</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-green-500">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-10 rounded-[2.5rem] border-t-4 border-green-500">
                         <h4 class="font-black text-white text-2xl mb-4 italic uppercase">Android</h4>
-                        <p class="text-sm text-slate-300 mb-6">Download APK Septopia, install, dan langsung main.</p>
-                        <a href="https://www.mediafire.com/file/jjnsgutlodhz1zs/SeptopiaPS.apk/file" target="_blank" class="block w-full py-4 bg-green-600 hover:bg-green-500 rounded-xl font-black text-xs text-white uppercase tracking-widest shadow-lg transition-all">DOWNLOAD APK</a>
+                        <p class="text-slate-400 mb-8">Download APK khusus Septopia.</p>
+                        <a href="https://www.mediafire.com/file/jjnsgutlodhz1zs/SeptopiaPS.apk/file" target="_blank" class="block w-full py-4 bg-green-600 hover:bg-green-500 rounded-xl font-black text-white uppercase transition-all shadow-lg shadow-green-900/40">Download APK</a>
                     </div>
-                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-blue-500">
+                    <div class="glass-card p-10 rounded-[2.5rem] border-t-4 border-blue-500">
                         <h4 class="font-black text-white text-2xl mb-4 italic uppercase">Windows</h4>
-                        <p class="text-sm text-slate-300 mb-4">Edit <span class="text-white font-mono bg-blue-900/50 px-2 py-1 rounded">hosts</span> file:</p>
-                        <code class="text-yellow-500 text-xs font-bold font-mono break-all bg-black/60 p-4 block rounded-xl italic">91.134.85.13 growtopia1.com</code>
+                        <p class="text-slate-400 mb-4 text-sm italic">Edit file hosts ke IP berikut:</p>
+                        <code class="text-yellow-500 text-lg font-bold font-mono break-all bg-black/50 p-4 block rounded-xl border border-white/5">91.134.85.13</code>
                     </div>
-                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-purple-500">
-                        <h4 class="font-black text-white text-2xl mb-4 italic uppercase">iOS</h4>
-                        <p class="text-sm text-slate-300 mb-4">Gunakan Link Surge:</p>
-                        <code class="text-blue-400 text-[10px] font-bold break-all bg-black/60 p-4 block rounded-xl">https://dash.gtps.cloud/ios/5678</code>
-                    </div>
-                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-orange-500">
-                        <h4 class="font-black text-white text-2xl mb-4 italic uppercase">macOS</h4>
-                        <p class="text-sm text-slate-300 font-medium italic">Gunakan terminal untuk edit /etc/hosts.</p>
+                    <div class="glass-card p-10 rounded-[2.5rem] border-t-4 border-orange-500">
+                        <h4 class="font-black text-white text-2xl mb-4 italic uppercase">iOS / Mac</h4>
+                        <p class="text-slate-400 mb-4 text-sm">Gunakan Surge atau edit Host:</p>
+                        <code class="text-blue-400 text-xs font-bold break-all bg-black/50 p-4 block rounded-xl">dash.gtps.cloud/ios/5678</code>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- PAGE: COMMUNITY (3 Items) -->
+        <!-- COMMUNITY -->
         <div id="p-community" class="page-content">
             <div class="max-w-5xl mx-auto py-12 text-center">
-                <h2 class="font-heading text-4xl uppercase italic mb-10 text-white">Our Community</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="glass-card p-8 rounded-3xl border-b-4 border-blue-500">
-                        <h4 class="font-black text-white mb-4 italic uppercase">Discord Server</h4>
-                        <p class="text-sm text-slate-400 mb-6">Komunitas utama untuk info update & event.</p>
-                        <button onclick="window.open('https://discord.gg/A75xzKjSrM')" class="w-full py-4 bg-blue-600 hover:bg-blue-500 rounded-xl font-black text-xs text-white uppercase transition-all">JOIN DISCORD</button>
+                <h2 class="font-heading text-4xl uppercase italic mb-10 text-white">Join Community</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-card p-10 rounded-3xl border-b-4 border-blue-500 flex flex-col items-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="w-16 h-16 mb-6 opacity-80" alt="Discord">
+                        <h4 class="font-black text-white text-xl mb-2 italic uppercase">Discord Server</h4>
+                        <p class="text-slate-400 text-sm mb-8">Dapatkan update terbaru dan event spesial setiap minggunya.</p>
+                        <button onclick="window.open('https://discord.gg/A75xzKjSrM')" class="w-full py-4 bg-blue-600 hover:bg-blue-500 rounded-xl font-black text-white uppercase shadow-xl transition-all">Masuk Discord</button>
                     </div>
-                    <div class="glass-card p-8 rounded-3xl border-b-4 border-green-500">
-                        <h4 class="font-black text-white mb-4 italic uppercase">WhatsApp Group</h4>
-                        <p class="text-sm text-slate-400 mb-6">Diskusi harian antar player Septopia.</p>
-                        <button onclick="window.open('https://chat.whatsapp.com/L1234567890')" class="w-full py-4 bg-green-600 hover:bg-green-500 rounded-xl font-black text-xs text-white italic uppercase transition-all">JOIN WA GROUP</button>
-                    </div>
-                    <div class="glass-card p-8 rounded-3xl border-b-4 border-yellow-500">
-                        <h4 class="font-black text-white mb-4 italic uppercase text-yellow-500">Contact Admin</h4>
-                        <p class="text-sm text-slate-400 mb-6">Layanan Top-up Role atau Bantuan Akun.</p>
-                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full py-4 bg-yellow-500 hover:bg-yellow-400 rounded-xl font-black text-xs text-black uppercase transition-all">WHATSAPP ADMIN</button>
+                    <div class="glass-card p-10 rounded-3xl border-b-4 border-yellow-500 flex flex-col items-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-16 h-16 mb-6 opacity-80" alt="WhatsApp">
+                        <h4 class="font-black text-white text-xl mb-2 italic uppercase">WhatsApp Admin</h4>
+                        <p class="text-slate-400 text-sm mb-8">Butuh bantuan akun atau top-up? Hubungi admin resmi kami.</p>
+                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full py-4 bg-yellow-500 hover:bg-yellow-400 rounded-xl font-black text-black uppercase shadow-xl transition-all">Chat Admin</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- PAGE: FAQ (2 Items) -->
+        <!-- SHOP -->
+        <div id="p-shop" class="page-content">
+            <div class="max-w-6xl mx-auto py-12">
+                <h2 class="font-heading text-4xl uppercase italic mb-4 text-center text-yellow-500">Official Store</h2>
+                <p class="text-center text-slate-400 mb-12 italic">Pilih paket untuk meningkatkan pengalaman bermainmu.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card p-10 rounded-[2.5rem] border-t-4 border-blue-500">
+                        <h4 class="font-black text-white text-xl italic uppercase">Diamond Locks</h4>
+                        <div class="text-3xl font-black text-white my-6 italic">Rp 5.000 <span class="text-xs text-slate-500">/ 10 DL</span></div>
+                        <ul class="text-left text-sm text-slate-400 mb-8 space-y-2">
+                            <li>✓ Instant Delivery</li>
+                            <li>✓ Best Price</li>
+                        </ul>
+                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full py-4 bg-blue-600/20 border border-blue-500/50 rounded-xl font-black text-white uppercase hover:bg-blue-600 transition-all">Beli via WA</button>
+                    </div>
+                    <div class="glass-card p-10 rounded-[2.5rem] border-4 border-yellow-500 relative scale-105 shadow-2xl">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-500 text-black px-6 py-1 rounded-full text-[10px] font-black uppercase">Most Popular</div>
+                        <h4 class="font-black text-white text-xl italic uppercase">Premium Rank</h4>
+                        <div class="text-4xl font-black text-white my-6 italic">Rp 50.000</div>
+                        <ul class="text-left text-sm text-slate-300 mb-8 space-y-2 font-medium">
+                            <li>✓ Custom Chat Color</li>
+                            <li>✓ Exclusive Command</li>
+                            <li>✓ Daily Gem Bonus</li>
+                        </ul>
+                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full py-4 bg-yellow-500 rounded-xl font-black text-black uppercase hover:bg-yellow-400 transition-all shadow-lg">Beli Sekarang</button>
+                    </div>
+                    <div class="glass-card p-10 rounded-[2.5rem] border-t-4 border-purple-500">
+                        <h4 class="font-black text-white text-xl italic uppercase">Custom Item</h4>
+                        <div class="text-3xl font-black text-white my-6 italic uppercase">Price: Nego</div>
+                        <p class="text-slate-400 text-sm mb-8 italic">Buat item unik sendiri di dalam game.</p>
+                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full py-4 bg-purple-600/20 border border-purple-500/50 rounded-xl font-black text-white uppercase hover:bg-purple-600 transition-all">Hubungi Owner</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
         <div id="p-faq" class="page-content">
             <div class="max-w-3xl mx-auto py-12">
-                <h2 class="font-heading text-4xl uppercase italic mb-10 text-center text-white">F.A.Q</h2>
-                <div class="glass-card p-8 rounded-3xl border-l-4 border-green-500 mb-6">
-                    <p class="text-white font-bold mb-2 uppercase italic tracking-wider">Lupa Password Akun?</p>
-                    <p class="text-slate-400 text-sm">Chat Admin via WhatsApp atau Discord dengan menyertakan bukti kepemilikan akun yang sah.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl border-l-4 border-blue-500">
-                    <p class="text-white font-bold mb-2 uppercase italic tracking-wider">Metode Pembayaran Shop?</p>
-                    <p class="text-slate-400 text-sm">Kami menerima pembayaran melalui Dana, Ovo, QRIS, dan Pulsa melalui Admin resmi.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAGE: SHOP (3 Items) -->
-        <div id="p-shop" class="page-content">
-            <div class="max-w-5xl mx-auto py-12 text-center">
-                <h2 class="font-heading text-4xl uppercase italic mb-10 text-yellow-500 tracking-widest">Septopia Store</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-blue-500">
-                        <h4 class="font-black text-white italic uppercase tracking-widest">Diamond Locks</h4>
-                        <div class="text-3xl font-black text-white mt-4 italic">Rp 5.000 <span class="text-[10px] text-slate-500">/ 10 DL</span></div>
-                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-xl font-black text-[10px] uppercase text-white shadow-lg transition-all">Buy via WA</button>
+                <h2 class="font-heading text-4xl uppercase italic mb-12 text-center text-white">Pertanyaan Umum</h2>
+                <div class="space-y-4">
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-blue-500">
+                        <p class="text-white font-bold mb-2">Kenapa tidak bisa login?</p>
+                        <p class="text-slate-400 text-sm italic">Cek status server di tab Statistic atau pastikan IP Host sudah benar.</p>
                     </div>
-                    <div class="glass-card p-8 rounded-[2rem] border-4 border-yellow-500 relative transform scale-105">
-                        <div class="absolute -top-3 right-8 bg-yellow-500 text-black text-[9px] font-black px-4 py-1 rounded-full uppercase">Best Seller</div>
-                        <h4 class="font-black text-white italic uppercase tracking-widest">Premium Rank</h4>
-                        <div class="text-3xl font-black text-white mt-4 italic">Rp 50.000</div>
-                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-yellow-500 hover:bg-yellow-400 rounded-xl font-black text-[10px] uppercase text-black shadow-lg transition-all">Buy via WA</button>
-                    </div>
-                    <div class="glass-card p-8 rounded-[2rem] border-t-4 border-purple-500">
-                        <h4 class="font-black text-white italic uppercase tracking-widest text-purple-400">Custom Item</h4>
-                        <div class="text-3xl font-black text-white mt-4 italic uppercase">Nego</div>
-                        <button onclick="window.open('https://wa.me/6281525742110')" class="w-full mt-8 py-4 bg-purple-600 hover:bg-purple-500 rounded-xl font-black text-[10px] uppercase text-white shadow-lg transition-all">Contact Owner</button>
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-green-500">
+                        <p class="text-white font-bold mb-2">Bagaimana cara menjadi staff?</p>
+                        <p class="text-slate-400 text-sm italic">Kami akan membuka pendaftaran (Apply) melalui pengumuman di Discord.</p>
                     </div>
                 </div>
             </div>
@@ -266,22 +265,31 @@
     </main>
 
     <script>
-        // Navigasi Antar Halaman
+        // Navigasi
         function showPage(pageId) {
+            // Sembunyikan semua page
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(p => p.classList.remove('active-page'));
             
+            // Hapus class active dari nav
             const links = document.querySelectorAll('.nav-link');
             links.forEach(l => l.classList.remove('active'));
             
-            document.getElementById('p-' + pageId).classList.add('active-page');
+            // Tampilkan page yang dipilih
+            const targetPage = document.getElementById('p-' + pageId);
+            if(targetPage) {
+                targetPage.classList.add('active-page');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Aktifkan link di nav
             const activeNavLink = document.getElementById('n-' + pageId);
             if(activeNavLink) {
                 activeNavLink.classList.add('active');
             }
         }
 
-        // Live Statistik dari API
+        // Live Statistik Server
         async function updateStats() {
             const API = "https://api.gtps.cloud/api/server/public/5678";
             const PROXY = `https://api.allorigins.win/get?url=${encodeURIComponent(API)}&t=${Date.now()}`;
@@ -292,11 +300,10 @@
                     document.getElementById('p-online').innerText = data.state.players_online || 0;
                 }
             } catch (e) { 
-                console.log("Gagal sinkronisasi statistik server."); 
+                console.log("Statistik gagal diperbarui."); 
             }
         }
         
-        // Jalankan Update
         updateStats(); 
         setInterval(updateStats, 30000); 
     </script>
