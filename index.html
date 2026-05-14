@@ -21,15 +21,15 @@
         .main-banner-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background-image: linear-gradient(to bottom, rgba(10, 15, 29, 0.4), rgba(10, 15, 29, 0.95)), 
-                              url('https://i.ibb.co.com/vH90mYf/S7RhqWGB.png');
+                              url('https://i.ibb.co.com/B5nyR7dp/back-sps.png');
             background-size: cover; background-position: center;
         }
 
         .font-heading { font-family: 'Space Grotesk', sans-serif; }
         .search-container { width: 100%; max-width: 500px; margin: 15px auto; border-radius: 15px; overflow: hidden; }
 
-        .page-content { display: none; min-height: 80vh; padding: 2rem 1rem; flex-direction: column; align-items: center; width: 100%; animation: slideUp 0.5s ease-out forwards; }
-        .active-page { display: flex; }
+        /* HANYA MENGUBAH INI: display diubah ke flex permanen & ditambah padding biar ga nempel */
+        .page-content { display: flex; min-height: 80vh; padding: 6rem 1rem; flex-direction: column; align-items: center; width: 100%; animation: slideUp 0.5s ease-out forwards; }
 
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -57,6 +57,7 @@
                 <div onclick="showPage('stats')" id="n-stats" class="nav-link">Statistic</div>
                 <div onclick="showPage('connect')" id="n-connect" class="nav-link">Connect</div>
                 <div onclick="showPage('community')" id="n-community" class="nav-link">Community</div>
+                <div onclick="showPage('faq')" id="n-faq" class="nav-link">FAQ</div>
                 <div onclick="showPage('shop')" id="n-shop" class="px-6 py-2 bg-blue-600 rounded-full font-black text-[10px] text-white uppercase cursor-pointer hover:bg-blue-500 transition shadow-lg">Shop</div>
             </div>
         </div>
@@ -64,7 +65,7 @@
 
     <main class="max-w-7xl mx-auto">
         
-        <section id="p-home" class="page-content active-page text-center">
+        <section id="p-home" class="page-content text-center">
             <img src="https://i.ibb.co.com/bMFwdnfK/SOCIA-PS.webp" class="w-32 h-32 rounded-[2rem] border-4 border-white/10 shadow-2xl mb-6">
             <h1 class="font-heading text-6xl md:text-8xl font-black italic uppercase text-white leading-none">Socia <span class="text-blue-500">PS</span></h1>
             
@@ -131,6 +132,17 @@
             </div>
         </section>
 
+        <section id="p-faq" class="page-content">
+            <h2 class="font-heading text-4xl uppercase italic mb-10 text-white">FAQ</h2>
+            <div class="glass-card p-8 rounded-[2rem] max-w-2xl w-full text-left mb-4">
+                <h4 class="text-white font-black text-base italic uppercase mb-2"> Bagaimanakah cara daftar akun?</h4>
+                <p class="text-slate-400 mb-6 italic text-sm">Kamu bisa langsung mendaftar di dalam game secara otomatis saat pertama kali login menggunakan fitur Create Account.</p>
+                
+                <h4 class="text-white font-black text-base italic uppercase mb-2"> Mengapa server tidak bisa diakses?</h4>
+                <p class="text-slate-400 italic text-sm">Pastikan koneksi internet kamu stabil atau cek status server di halaman Statistic untuk memastikan server tidak sedang dalam maintenance.</p>
+            </div>
+        </section>
+
         <section id="p-shop" class="page-content">
             <h2 class="font-heading text-4xl uppercase italic mb-10 text-yellow-500">Store</h2>
             <div class="glass-card p-10 rounded-[2rem] max-w-md w-full text-center">
@@ -147,14 +159,18 @@
     </footer>
 
     <script>
+        // HANYA MENGUBAH INI: Fungsi dipersingkat khusus untuk scroll otomatis ke section tujuan
         function showPage(pageId) {
-            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active-page'));
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            const target = document.getElementById('p-' + pageId);
-            if(target) target.classList.add('active-page');
             const nav = document.getElementById('n-' + pageId);
             if(nav) nav.classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            const target = document.getElementById('p-' + pageId);
+            if(target) {
+                const offset = 80; // Ukuran navbar kamu biar pas berhenti ga nutupin judul
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
         }
 
         async function updateStats() {
