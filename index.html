@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>SOCIA GTPS | Official Portal</title>
+    <title>SPS GTPS | Official Portal</title>
     <meta name="description" content="Server private GT paling stabil dengan fitur eksklusif.">
-    <meta name="google-site-verification" content="KODE-VERIFIKASI-KAMU" />
 
     <link rel="icon" type="image/png" href="https://i.ibb.co.com/bMFwdnfK/SOCIA-PS.webp">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -37,6 +36,10 @@
 
         .nav-link { cursor: pointer; transition: 0.3s; color: #94a3b8; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
         .nav-link:hover, .nav-link.active { color: white; }
+
+        /* Modal Blur */
+        .modal { transition: opacity 0.25s ease; }
+        body.modal-active { overflow: hidden; }
     </style>
 </head>
 <body class="pt-24">
@@ -47,7 +50,7 @@
         <div class="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
             <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
                 <img src="https://i.ibb.co.com/bMFwdnfK/SOCIA-PS.webp" class="w-10 h-10 rounded-lg">
-                <span class="font-black text-xl uppercase text-white italic tracking-tighter">Socia <span class="text-blue-500">PS</span></span>
+                <span class="font-black text-xl uppercase text-white italic tracking-tighter">SPS <span class="text-blue-500">PS</span></span>
             </div>
             <div class="hidden md:flex gap-8 items-center h-full">
                 <div onclick="showPage('home')" id="n-home" class="nav-link active">Home</div>
@@ -64,7 +67,7 @@
         
         <section id="p-home" class="page-content text-center">
             <img src="https://i.ibb.co.com/bMFwdnfK/SOCIA-PS.webp" class="w-32 h-32 rounded-[2rem] border-4 border-white/10 shadow-2xl mb-6">
-            <h1 class="font-heading text-6xl md:text-8xl font-black italic uppercase text-white leading-none">Socia <span class="text-blue-500">PS</span></h1>
+            <h1 class="font-heading text-6xl md:text-8xl font-black italic uppercase text-white leading-none">SPS <span class="text-blue-500">GTPS</span></h1>
             
             <div class="search-container glass-card p-2">
                 <div class="gcse-search"></div>
@@ -92,21 +95,45 @@
         <section id="p-connect" class="page-content">
             <h2 class="font-heading text-4xl uppercase italic mb-10 text-white">How to Play</h2>
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full px-4">
-                <div class="glass-card p-8 rounded-3xl text-center border-t-4 border-green-500">
-                    <h4 class="font-black text-white mb-4 italic uppercase">Android</h4>
-                    <a href="https://www.mediafire.com/file/jjnsgutlodhz1zs/SociaPS.apk/file" target="_blank" class="block py-3 bg-green-600 rounded-xl font-black text-[10px] text-white uppercase shadow-lg">Download APK</a>
+                <div class="glass-card p-6 rounded-3xl text-center border-t-4 border-green-500 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-black text-white mb-2 italic uppercase">Android</h4>
+                        <p class="text-[10px] text-slate-400 mb-4 font-mono truncate">https://dash.gtps.cloud/android/5678</p>
+                    </div>
+                    <div class="space-y-2">
+                        <button onclick="copyText('https://dash.gtps.cloud/android/5678')" class="w-full py-2 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy Link PowerTunnel</button>
+                        <button onclick="openModal('modal-android')" class="w-full py-2 bg-green-600 rounded-xl font-black text-[10px] text-white uppercase hover:bg-green-500 transition shadow-lg">Lihat Tutorial</button>
+                    </div>
                 </div>
-                <div class="glass-card p-8 rounded-3xl text-center border-t-4 border-blue-500">
-                    <h4 class="font-black text-white mb-4 italic uppercase">Windows</h4>
-                    <code class="text-yellow-500 text-sm font-mono bg-black/40 p-2 block rounded">91.134.85.13</code>
+                <div class="glass-card p-6 rounded-3xl text-center border-t-4 border-blue-500 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-black text-white mb-2 italic uppercase">Windows</h4>
+                        <code class="text-yellow-500 text-[10px] font-mono bg-black/40 p-2 block rounded mb-4 text-left whitespace-pre">91.134.85.13 growtopia1.com&#10;91.134.85.13 growtopia2.com</code>
+                    </div>
+                    <div class="space-y-2">
+                        <button onclick="copyText('91.134.85.13 growtopia1.com\n91.134.85.13 growtopia2.com\n91.134.85.13 www.growtopia1.com\n91.134.85.13 www.growtopia2.com')" class="w-full py-2 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy Hosts</button>
+                        <button onclick="openModal('modal-windows')" class="w-full py-2 bg-blue-600 rounded-xl font-black text-[10px] text-white uppercase hover:bg-blue-500 transition shadow-lg">Lihat Tutorial</button>
+                    </div>
                 </div>
-                <div class="glass-card p-8 rounded-3xl text-center border-t-4 border-purple-500">
-                    <h4 class="font-black text-white mb-4 italic uppercase">iOS</h4>
-                    <code class="text-blue-400 text-[10px] font-mono bg-black/40 p-2 block rounded italic">dash.gtps.cloud/ios/5678</code>
+                <div class="glass-card p-6 rounded-3xl text-center border-t-4 border-purple-500 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-black text-white mb-2 italic uppercase">iOS (Surge 5)</h4>
+                        <p class="text-[10px] text-slate-400 mb-4 font-mono truncate">https://dash.gtps.cloud/ios/5678</p>
+                    </div>
+                    <div class="space-y-2">
+                        <button onclick="copyText('https://dash.gtps.cloud/ios/5678')" class="w-full py-2 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy Link Surge 5</button>
+                        <button onclick="openModal('modal-ios')" class="w-full py-2 bg-purple-600 rounded-xl font-black text-[10px] text-white uppercase hover:bg-purple-500 transition shadow-lg">Lihat Tutorial</button>
+                    </div>
                 </div>
-                <div class="glass-card p-8 rounded-3xl text-center border-t-4 border-orange-500">
-                    <h4 class="font-black text-white mb-4 italic uppercase">macOS</h4>
-                    <p class="text-[10px] text-slate-400 italic">Edit /etc/hosts file manually.</p>
+                <div class="glass-card p-6 rounded-3xl text-center border-t-4 border-orange-500 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-black text-white mb-2 italic uppercase">macOS</h4>
+                        <code class="text-orange-400 text-[10px] font-mono bg-black/40 p-2 block rounded mb-4 text-left whitespace-pre">91.134.85.13 growtopia1.com&#10;91.134.85.13 growtopia2.com</code>
+                    </div>
+                    <div class="space-y-2">
+                        <button onclick="copyText('91.134.85.13 growtopia1.com\n91.134.85.13 growtopia2.com\n91.134.85.13 www.growtopia1.com\n91.134.85.13 www.growtopia2.com')" class="w-full py-2 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy Hosts</button>
+                        <button onclick="openModal('modal-macos')" class="w-full py-2 bg-orange-600 rounded-xl font-black text-[10px] text-white uppercase hover:bg-orange-500 transition shadow-lg">Lihat Tutorial</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -137,30 +164,39 @@
                     <h3 class="text-blue-500 font-black text-xs uppercase mb-4 italic">🎮 Seputar Game & Cara Bermain</h3>
                     <div class="space-y-4">
                         <div>
-                            <h4 class="text-white font-bold text-sm italic">Q: Apa itu Socia GTPS?</h4>
-                            <p class="text-slate-400 text-xs mt-1">A: Socia GTPS adalah Growtopia Private Server yang didedikasikan untuk pengalaman bermain yang lebih seru, stabil, dan menyenangkan dengan fitur kustom dan event menarik tanpa lag.</p>
+                            <h4 class="text-white font-bold text-sm italic">Q: Apa itu SPS GTPS?</h4>
+                            <p class="text-slate-400 text-xs mt-1">A: SPS GTPS adalah Growtopia Private Server yang didedikasikan untuk memberikan pengalaman bermain Growtopia yang lebih seru, stabil, dan menyenangkan. Di sini, Anda bisa menikmati berbagai fitur kustom, event menarik, dan komunitas yang ramah tanpa lag yang mengganggu.</p>
                         </div>
                         <div>
-                            <h4 class="text-white font-bold text-sm italic">Q: Bagaimana cara bermain?</h4>
-                            <p class="text-slate-400 text-xs mt-1">A: Download APK/Windows di menu <span class="text-blue-500 underline cursor-pointer" onclick="showPage('connect')">Connect</span>, masukkan IP & Port, lalu buat GrowID baru di dalam game!</p>
+                            <h4 class="text-white font-bold text-sm italic">Q: Bagaimana cara bermain di SPS GTPS?</h4>
+                            <p class="text-slate-400 text-xs mt-1">A: Caranya sangat mudah! Anda hanya perlu mendownload atau menggunakan file host yang tersedia di menu <span class="text-blue-500 underline cursor-pointer" onclick="showPage('connect')">Connect</span> di atas, ikuti panduan instalasi di platform masing-masing, dan buat ID baru langsung dari form login dalam game.</p>
                         </div>
                         <div>
-                            <h4 class="text-white font-bold text-sm italic">Q: Apakah bermain di sini gratis?</h4>
-                            <p class="text-slate-400 text-xs mt-1">A: 100% Gratis! Semua pemain memiliki kesempatan yang sama untuk berkreasi dan menikmati fitur dasar.</p>
+                            <h4 class="text-white font-bold text-sm italic">Q: Apakah bermain di SPS GTPS gratis?</h4>
+                            <p class="text-slate-400 text-xs mt-1">A: 100% Gratis! Semua pemain memiliki kesempatan yang sama untuk bermain, berkreasi, dan menikmati semua fitur dasar di dalam server kami.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl border-l-4 border-green-500">
-                    <h3 class="text-green-500 font-black text-xs uppercase mb-4 italic">🔐 Akun & Keamanan</h3>
+                    <h3 class="text-green-500 font-black text-xs uppercase mb-4 italic">🔐 Akun, Keamanan & Login</h3>
                     <div class="space-y-4">
                         <div>
-                            <h4 class="text-white font-bold text-sm italic">Q: Apakah akun GT Resmi (Ubisoft) saya aman?</h4>
-                            <p class="text-slate-400 text-xs mt-1">A: Sangat aman. Kami berdiri terpisah dari Ubisoft. Kami sarankan gunakan password yang berbeda dari akun resmi Anda demi keamanan ekstra.</p>
+                            <h4 class="text-white font-bold text-sm italic">Q: Bagaimana Tutorial Login pertama kali?</h4>
+                            <div class="text-slate-400 text-xs mt-1 space-y-1 bg-black/40 p-3 rounded-xl border border-white/5 font-mono">
+                                <p><span class="text-blue-400">Nama Server :</span> SPS</p>
+                                <p><span class="text-blue-400">Name ID :</span> ISI / BUAT BARU</p>
+                                <p><span class="text-blue-400">Pass ID :</span> ISI / BUAT BARU</p>
+                                <p class="text-[11px] text-zinc-500 italic mt-1">*Masukkan nama akun baru pilihanmu langsung di kolom login game untuk mendaftar otomatis.</p>
+                            </div>
                         </div>
                         <div>
-                            <h4 class="text-white font-bold text-sm italic">Q: Saya lupa password, apa yang harus dilakukan?</h4>
-                            <p class="text-slate-400 text-xs mt-1">A: Gunakan fitur /recovery atau hubungi admin di <span class="text-blue-500 underline cursor-pointer" onclick="showPage('community')">Discord</span> dengan menyertakan bukti kepemilikan akun yang sah.</p>
+                            <h4 class="text-white font-bold text-sm italic">Q: Apakah akun GT Resmi (Ubisoft) saya aman jika bermain di sini?</h4>
+                            <p class="text-slate-400 text-xs mt-1">A: Sangat aman. SPS GTPS berdiri sepenuhnya terpisah dari server resmi Growtopia (Ubisoft). Kami tidak pernah meminta data akun resmi Anda. Namun, demi keamanan, kami sangat menyarankan Anda menggunakan GrowID dan password yang berbeda dari akun resmi Anda.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm italic">Q: Saya lupa password akun SPS GTPS saya, apa yang harus dilakukan?</h4>
+                            <p class="text-slate-400 text-xs mt-1">A: Anda bisa menggunakan fitur /recovery atau menghubungi tim admin/moderator kami di server <span class="text-blue-500 underline cursor-pointer" onclick="showPage('community')">Discord</span> resmi dengan menyertakan bukti kepemilikan akun yang sah (seperti email pendaftaran atau bukti transaksi jika pernah berdonasi).</p>
                         </div>
                     </div>
                 </div>
@@ -169,12 +205,12 @@
                     <h3 class="text-yellow-500 font-black text-xs uppercase mb-4 italic">💎 Fitur & Donasi (Store)</h3>
                     <div class="space-y-4">
                         <div>
-                            <h4 class="text-white font-bold text-sm italic">Q: Apa saja fitur unggulan Socia GTPS?</h4>
-                            <p class="text-slate-400 text-xs mt-1">A: Rate drop item & gem seimbang, event rutin berhadiah, sistem anti-cheat ketat, serta item kustom dan role keren.</p>
+                            <h4 class="text-white font-bold text-sm italic">Q: Apa saja fitur unggulan di SPS GTPS?</h4>
+                            <p class="text-slate-400 text-xs mt-1">A: Kami menawarkan berbagai fitur yang tidak ada di server biasa, seperti: Rate drop item dan gem yang lebih seimbang, Event harian dan mingguan berhadiah menarik, Sistem anti-cheat yang ketat, serta Item kustom dan role keren.</p>
                         </div>
                         <div>
-                            <h4 class="text-white font-bold text-sm italic">Q: Bagaimana cara donasi / beli item?</h4>
-                            <p class="text-slate-400 text-xs mt-1">A: Kunjungi menu <span class="text-yellow-500 underline cursor-pointer" onclick="showPage('shop')">Shop</span>. Kami mendukung berbagai metode pembayaran lokal yang aman.</p>
+                            <h4 class="text-white font-bold text-sm italic">Q: Bagaimana cara melakukan donasi atau membeli item khusus?</h4>
+                            <p class="text-slate-400 text-xs mt-1">A: Anda bisa mengunjungi menu <span class="text-yellow-500 underline cursor-pointer" onclick="showPage('shop')">Store/Shop</span> di website resmi ini. Donasi Anda sangat membantu kami untuk membiayai perawatan server agar tetap online 24/7.</p>
                         </div>
                     </div>
                 </div>
@@ -183,12 +219,12 @@
                     <h3 class="text-red-500 font-black text-xs uppercase mb-4 italic">🛠️ Kendala Teknis & Bantuan</h3>
                     <div class="space-y-4">
                         <div>
-                            <h4 class="text-white font-bold text-sm italic">Q: Kenapa Unable to Connect?</h4>
-                            <p class="text-slate-400 text-xs mt-1">A: Biasanya karena Maintenance, internet tidak stabil, atau aplikasi versi lama. Cek status di <span class="text-blue-500 underline cursor-pointer" onclick="showPage('stats')">Statistic</span>.</p>
+                            <h4 class="text-white font-bold text-sm italic">Q: Kenapa saya tidak bisa masuk ke server (Unable to Connect)?</h4>
+                            <p class="text-slate-400 text-xs mt-1">A: Masalah ini disebabkan oleh server sedang masa pemeliharaan (maintenance), koneksi internet Anda tidak stabil, atau Anda belum memperbarui konfigurasi host/aplikasi ke versi terbaru. Silakan pantau pengumuman di <span class="text-blue-500 underline cursor-pointer" onclick="showPage('stats')">Statistic</span>.</p>
                         </div>
                         <div>
-                            <h4 class="text-white font-bold text-sm italic">Q: Menemukan bug atau Cheater?</h4>
-                            <p class="text-slate-400 text-xs mt-1">A: Lapor melalui Ticket System di Discord kami disertai bukti screenshot atau rekaman video.</p>
+                            <h4 class="text-white font-bold text-sm italic">Q: Saya menemukan bug atau cheater/scammer, lapor ke mana?</h4>
+                            <p class="text-slate-400 text-xs mt-1">A: Kami berkomitmen menjaga lingkungan bersih. Anda bisa melaporkan bug atau pemain nakal melalui tiket bantuan (Ticket System) di <span class="text-blue-500 underline cursor-pointer" onclick="showPage('community')">Discord</span> resmi SPS. Berikan bukti screenshot atau rekaman video.</p>
                         </div>
                     </div>
                 </div>
@@ -208,8 +244,73 @@
 
     </main>
 
+    <div id="modal-android" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-[200]">
+        <div onclick="closeModal('modal-android')" class="modal-overlay absolute w-full h-full bg-black/70 backdrop-blur-md"></div>
+        <div class="modal-container glass-card w-11/12 md:max-w-md mx-auto rounded-3xl z-50 overflow-y-auto max-h-[85vh] p-6 text-left">
+            <h3 class="text-white font-black text-lg italic uppercase border-b border-white/10 pb-3 mb-4">🤖 TUTORIAL ANDROID</h3>
+            <ol class="list-decimal list-inside text-xs text-slate-300 space-y-3 font-medium">
+                <li>Pertama, unduh aplikasi Powertunnel dari Playstore/Internet.</li>
+                <li>Lalu klik tombol <span class="text-green-400">"Copy Link PowerTunnel"</span> di menu connect web ini.</li>
+                <li>Ini akan menyalin tautan host powertunnel otomatis.</li>
+                <li>Kemudian buka aplikasi PowerTunnel, klik ikon tiga garis, dan klik ikon pengaturan host.</li>
+                <li>Tempel URL host powertunnel yang telah disalin. Selain itu, ubah periode pembaruan host dari 12 jam menjadi saat dimulai.</li>
+                <li>Sekarang Anda dapat masuk ke GTPS Anda!</li>
+            </ol>
+            <button onclick="closeModal('modal-android')" class="mt-6 w-full py-3 bg-zinc-800 rounded-xl font-bold text-xs text-white uppercase tracking-wider">Tutup</button>
+        </div>
+    </div>
+
+    <div id="modal-windows" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-[200]">
+        <div onclick="closeModal('modal-windows')" class="modal-overlay absolute w-full h-full bg-black/70 backdrop-blur-md"></div>
+        <div class="modal-container glass-card w-11/12 md:max-w-md mx-auto rounded-3xl z-50 overflow-y-auto max-h-[85vh] p-6 text-left">
+            <h3 class="text-white font-black text-lg italic uppercase border-b border-white/10 pb-3 mb-4">💻 TUTORIAL WINDOWS</h3>
+            <ol class="list-decimal list-inside text-xs text-slate-300 space-y-3 font-medium">
+                <li>Tekan <kbd class="bg-zinc-800 px-1.5 py-0.5 rounded border border-zinc-600 text-[10px]">⊞ Win + R</kbd> untuk membuka jendela "Jalankan" (Run).</li>
+                <li>Ketik <code class="text-yellow-500 font-mono bg-black/30 px-1 rounded text-[11px]">C:\Windows\System32\drivers\etc</code> di kotak teks, lalu Enter.</li>
+                <li>Temukan file bernama <span class="text-blue-400 font-bold">hosts</span>.</li>
+                <li>Klik kanan pada file "hosts" dan edit menggunakan Notepad atau text editor lain sebagai Administrator.</li>
+                <li>Tambahkan IP data hosts SPS yang sudah dicopy ke baris paling bawah.</li>
+                <li>Kemudian simpan (Save) dan jalankan aplikasi Growtopia Anda.</li>
+            </ol>
+            <button onclick="closeModal('modal-windows')" class="mt-6 w-full py-3 bg-zinc-800 rounded-xl font-bold text-xs text-white uppercase tracking-wider">Tutup</button>
+        </div>
+    </div>
+
+    <div id="modal-ios" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-[200]">
+        <div onclick="closeModal('modal-ios')" class="modal-overlay absolute w-full h-full bg-black/70 backdrop-blur-md"></div>
+        <div class="modal-container glass-card w-11/12 md:max-w-md mx-auto rounded-3xl z-50 overflow-y-auto max-h-[85vh] p-6 text-left">
+            <h3 class="text-white font-black text-lg italic uppercase border-b border-white/10 pb-3 mb-4">🍎 TUTORIAL IOS</h3>
+            <ol class="list-decimal list-inside text-xs text-slate-300 space-y-3 font-medium">
+                <li>Unduh aplikasi bernama: <span class="text-purple-400 font-bold">"Surge 5"</span> dari App Store.</li>
+                <li>Buka aplikasinya lalu Tekan "OK".</li>
+                <li>Klik pada berkas "Default.conf".</li>
+                <li>Klik pada bagian "IMPOR" - Unduh Profil dari URL.</li>
+                <li>Masukkan URL dari hasil salinan tombol host iOS di halaman connect sebelumnya, lalu klik "OK" dan "Selesai".</li>
+                <li>Tekan "SETUP" lalu setujui kebijakan dengan mengklik "OK" dan "Izinkan" untuk mengaktifkan Konfigurasi VPN!.</li>
+                <li>Selesai, sekarang buka game "Growtopia" asli milikmu dan Hubungkan!</li>
+            </ol>
+            <button onclick="closeModal('modal-ios')" class="mt-6 w-full py-3 bg-zinc-800 rounded-xl font-bold text-xs text-white uppercase tracking-wider">Tutup</button>
+        </div>
+    </div>
+
+    <div id="modal-macos" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-[200]">
+        <div onclick="closeModal('modal-macos')" class="modal-overlay absolute w-full h-full bg-black/70 backdrop-blur-md"></div>
+        <div class="modal-container glass-card w-11/12 md:max-w-md mx-auto rounded-3xl z-50 overflow-y-auto max-h-[85vh] p-6 text-left">
+            <h3 class="text-white font-black text-lg italic uppercase border-b border-white/10 pb-3 mb-4">🍏 TUTORIAL MACOS</h3>
+            <ol class="list-decimal list-inside text-xs text-slate-300 space-y-3 font-medium">
+                <li>Buka aplikasi Terminal di Mac Anda.</li>
+                <li>Ketik perintah: <code class="text-orange-400 font-mono bg-black/30 px-1 rounded text-[11px]">sudo nano /private/etc/hosts</code> lalu tekan Enter.</li>
+                <li>Masukkan password administrator Mac Anda apabila diminta.</li>
+                <li>Gunakan panah keyboard ke baris terbawah, lalu paste data host SPS yang sudah Anda salin.</li>
+                <li>Tekan <kbd class="bg-zinc-800 px-1 py-0.5 rounded text-[10px]">Ctrl + O</kbd> diikuti Enter untuk menyimpan, kemudian <kbd class="bg-zinc-800 px-1 py-0.5 rounded text-[10px]">Ctrl + X</kbd> untuk keluar.</li>
+                <li>Buka game Growtopia Anda dan selamat bermain!</li>
+            </ol>
+            <button onclick="closeModal('modal-macos')" class="mt-6 w-full py-3 bg-zinc-800 rounded-xl font-bold text-xs text-white uppercase tracking-wider">Tutup</button>
+        </div>
+    </div>
+
     <footer class="mt-20 py-10 text-center text-slate-500 text-[10px] font-bold uppercase tracking-widest bg-black/60">
-        © 2026 SOCIA PS. POWERED BY SOCIA GTPS.
+        © 2026 SPS PS. POWERED BY SOCIA GTPS.
     </footer>
 
     <script>
@@ -224,6 +325,28 @@
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }
+        }
+
+        // Fungsi Salin Teks Otomatis
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Berhasil disalin ke papan klip!");
+            }).catch(err => {
+                console.error('Gagal menyalin teks: ', err);
+            });
+        }
+
+        // Kontrol Popup Modal Tutorial
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.classList.add('modal-active');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('modal-active');
         }
 
         async function updateStats() {
