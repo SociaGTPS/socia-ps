@@ -7,7 +7,7 @@
     <title>SPS GTPS | Official Portal</title>
     <meta name="description" content="Server private GT paling stabil dengan fitur eksklusif.">
 
-    <link rel="icon" type="image/png" href="https://i.ibb.co.com/bMFwdnfK/SOCIA-PS.webp">
+    <link class="content-visibility: auto" rel="icon" type="image/png" href="https://i.ibb.co.com/bMFwdnfK/SOCIA-PS.webp">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
@@ -54,6 +54,7 @@
                 <img src="https://i.ibb.co.com/bMFwdnfK/SOCIA-PS.webp" class="w-10 h-10 rounded-lg">
                 <span class="font-black text-xl uppercase text-white italic tracking-tighter">SPS <span class="text-blue-500">PS</span></span>
             </div>
+            
             <div class="hidden md:flex gap-8 items-center h-full">
                 <div onclick="showPage('home')" id="n-home" class="nav-link active">Home</div>
                 <div onclick="showPage('stats')" id="n-stats" class="nav-link">Statistic</div>
@@ -62,6 +63,23 @@
                 <div onclick="showPage('faq')" id="n-faq" class="nav-link">FAQ</div>
                 <div onclick="showPage('shop')" id="n-shop" class="px-6 py-2 bg-blue-600 rounded-full font-black text-[10px] text-white uppercase cursor-pointer hover:bg-blue-500 transition shadow-lg">Shop</div>
             </div>
+
+            <div class="md:hidden flex items-center">
+                <button onclick="toggleMobileMenu()" class="text-slate-400 hover:text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-[#0a0f1d]/95 backdrop-blur-lg border-b border-white/10 flex flex-col gap-4 p-6 transition-all duration-300">
+            <div onclick="showPage('home')" id="nm-home" class="nav-link active py-2 text-base">Home</div>
+            <div onclick="showPage('stats')" id="nm-stats" class="nav-link py-2 text-base">Statistic</div>
+            <div onclick="showPage('connect')" id="nm-connect" class="nav-link py-2 text-base">Connect</div>
+            <div onclick="showPage('community')" id="nm-community" class="nav-link py-2 text-base">Community</div>
+            <div onclick="showPage('faq')" id="nm-faq" class="nav-link py-2 text-base">FAQ</div>
+            <div onclick="showPage('shop')" id="nm-shop" class="w-full text-center py-3 bg-blue-600 rounded-xl font-black text-xs text-white uppercase cursor-pointer hover:bg-blue-500 transition shadow-lg mt-2">Shop</div>
         </div>
     </nav>
 
@@ -103,11 +121,11 @@
                         <h4 class="font-black text-white mb-2 italic uppercase">Android</h4>
                         <p class="text-[10px] font-bold text-green-400 mb-2 tracking-wide uppercase">Power Tunnel Link</p>
                         <div class="bg-black/40 p-2 rounded-xl border border-white/5 mb-4">
-                            <p class="text-[11px] text-slate-300 font-mono break-all selection:bg-green-500">https://dash.gtps.cloud/android/5678</p>
+                            <p class="text-[11px] text-slate-300 font-mono break-all selection:bg-green-500">https://socia.gtps.cloud/android/1234</p>
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <button onclick="copyText('https://dash.gtps.cloud/android/5678')" class="w-full py-2.5 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy URL Host</button>
+                        <button onclick="copyText('https://socia.gtps.cloud/android/1234')" class="w-full py-2.5 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy URL Host</button>
                         <button onclick="openModal('modal-android')" class="w-full py-2.5 bg-green-600 rounded-xl font-black text-[10px] text-white uppercase hover:bg-green-500 transition shadow-lg">Lihat Tutorial</button>
                     </div>
                 </div>
@@ -131,11 +149,11 @@
                         <h4 class="font-black text-white mb-2 italic uppercase">iOS (Surge 5)</h4>
                         <p class="text-[10px] font-bold text-purple-400 mb-2 tracking-wide uppercase">Surge 5 Link</p>
                         <div class="bg-black/40 p-2 rounded-xl border border-white/5 mb-4">
-                            <p class="text-[11px] text-slate-300 font-mono break-all selection:bg-purple-500">https://dash.gtps.cloud/ios/5678</p>
+                            <p class="text-[11px] text-slate-300 font-mono break-all selection:bg-purple-500">https://socia.gtps.cloud/ios/1234</p>
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <button onclick="copyText('https://dash.gtps.cloud/ios/5678')" class="w-full py-2.5 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy URL Surge</button>
+                        <button onclick="copyText('https://socia.gtps.cloud/ios/1234')" class="w-full py-2.5 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy URL Surge</button>
                         <button onclick="openModal('modal-ios')" class="w-full py-2.5 bg-purple-600 rounded-xl font-black text-[10px] text-white uppercase hover:bg-purple-500 transition shadow-lg">Lihat Tutorial</button>
                     </div>
                 </div>
@@ -329,10 +347,19 @@
     </footer>
 
     <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
         function showPage(pageId) {
+            document.getElementById('mobile-menu').classList.add('hidden');
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            
             const nav = document.getElementById('n-' + pageId);
+            const navMobile = document.getElementById('nm-' + pageId);
             if(nav) nav.classList.add('active');
+            if(navMobile) navMobile.classList.add('active');
 
             const target = document.getElementById('p-' + pageId);
             if(target) {
@@ -350,4 +377,28 @@
             });
         }
 
-        function openModal(modalId)
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.classList.add('modal-active');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('modal-active');
+        }
+
+        async function updateStats() {
+            const API = "https://api.socia.gtps.cloud/api/server/public/1234";
+            const PROXY = `https://api.allorigins.win/get?url=${encodeURIComponent(API)}&t=${Date.now()}`;
+            try {
+                const res = await fetch(PROXY).then(r => r.json());
+                const data = JSON.parse(res.contents);
+                if(data && data.state) document.getElementById('p-online').innerText = data.state.players_online || 0;
+            } catch (e) { console.log("Stats error"); }
+        }
+        updateStats(); setInterval(updateStats, 30000);
+    </script>
+</body>
+</html>
