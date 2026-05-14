@@ -114,59 +114,69 @@
 
         <section id="p-connect" class="page-content">
             <h2 class="font-heading text-4xl uppercase italic mb-10 text-white">How to Play</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 w-full px-4">
                 
-                <div class="glass-card p-6 rounded-3xl text-center border-t-4 border-green-500 flex flex-col justify-between">
+                <div class="glass-card p-5 rounded-3xl text-center border-t-4 border-emerald-500 flex flex-col justify-between">
                     <div>
-                        <h4 class="font-black text-white mb-2 italic uppercase">Android</h4>
-                        <p class="text-[10px] font-bold text-green-400 mb-2 tracking-wide uppercase">Gak mau ribet langsung main aja? Download aplikasinya di sini</p>
+                        <h4 class="font-black text-white mb-2 italic uppercase text-sm">Direct App</h4>
+                        <p class="text-[10px] font-bold text-emerald-400 mb-2 tracking-wide uppercase">Gak mau ribet langsung main aja? Download aplikasinya di sini</p>
                     </div>
-                    <div class="space-y-2 mt-4">
-                        <a href="https://www.mediafire.com/file/jjnsgutlodhz1zs/SociaPS.apk/file" target="_blank" class="block w-full py-2.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl font-black text-[10px] text-white uppercase hover:from-green-500 hover:to-emerald-500 transition shadow-lg text-center">Download APK</a>
-                        <div class="w-full border-t border-white/5 my-2"></div>
-                        <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-wider mb-1">Atau pakai PowerTunnel:</p>
-                        <button onclick="copyText('https://socia.gtps.cloud/android/1234')" class="w-full py-2 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy URL Host</button>
-                        <button onclick="openModal('modal-android')" class="w-full py-2 bg-zinc-900 rounded-xl font-black text-[10px] text-slate-400 uppercase hover:text-white transition">Lihat Tutorial</button>
+                    <div class="mt-4">
+                        <a href="https://www.mediafire.com/file/jjnsgutlodhz1zs/SociaPS.apk/file" target="_blank" class="block w-full py-3 bg-gradient-to-r from-emerald-600 to-green-600 rounded-xl font-black text-[11px] text-white uppercase hover:from-emerald-500 hover:to-green-500 transition shadow-lg text-center tracking-wider">Download APK</a>
                     </div>
                 </div>
 
-                <div class="glass-card p-6 rounded-3xl text-center border-t-4 border-blue-500 flex flex-col justify-between">
+                <div class="glass-card p-5 rounded-3xl text-center border-t-4 border-green-500 flex flex-col justify-between">
                     <div>
-                        <h4 class="font-black text-white mb-2 italic uppercase">Windows</h4>
-                        <p class="text-[10px] font-bold text-blue-400 mb-2 tracking-wide uppercase">Hosts Data</p>
-                        <div class="bg-black/40 p-2 rounded-xl border border-white/5 mb-4 text-left">
-                            <code class="text-[10px] text-yellow-500 font-mono block leading-relaxed whitespace-pre">91.134.85.13 growtopia1.com&#10;91.134.85.13 growtopia2.com&#10;91.134.85.13 www.growtopia1.com&#10;91.134.85.13 www.growtopia2.com</code>
+                        <h4 class="font-black text-white mb-2 italic uppercase text-sm">Android</h4>
+                        <p class="text-[10px] font-bold text-green-400 mb-2 tracking-wide uppercase">Power Tunnel Link</p>
+                        <div class="bg-black/40 p-2 rounded-xl border border-white/5 mb-2">
+                            <p class="text-[10px] text-slate-300 font-mono break-all selection:bg-green-500">https://socia.gtps.cloud/android/1234</p>
                         </div>
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-1.5">
+                        <button onclick="copyText('https://socia.gtps.cloud/android/1234')" class="w-full py-2 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy URL Host</button>
+                        <button onclick="openModal('modal-android')" class="w-full py-2 bg-green-600 rounded-xl font-black text-[10px] text-white uppercase hover:bg-green-500 transition shadow-lg">Lihat Tutorial</button>
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-3xl text-center border-t-4 border-blue-500 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-black text-white mb-2 italic uppercase text-sm">Windows</h4>
+                        <p class="text-[10px] font-bold text-blue-400 mb-2 tracking-wide uppercase">Hosts Data</p>
+                        <div class="bg-black/40 p-2 rounded-xl border border-white/5 mb-2 text-left">
+                            <code class="text-[9px] text-yellow-500 font-mono block leading-relaxed whitespace-pre">91.134.85.13 growtopia1.com&#10;91.134.85.13 growtopia2.com&#10;91.134.85.13 www.growtopia1.com&#10;91.134.85.13 www.growtopia2.com</code>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
                         <button onclick="copyText('91.134.85.13 growtopia1.com\n91.134.85.13 growtopia2.com\n91.134.85.13 www.growtopia1.com\n91.134.85.13 www.growtopia2.com')" class="w-full py-2.5 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy Hosts</button>
                         <button onclick="openModal('modal-windows')" class="w-full py-2.5 bg-blue-600 rounded-xl font-black text-[10px] text-white uppercase hover:bg-blue-500 transition shadow-lg">Lihat Tutorial</button>
                     </div>
                 </div>
 
-                <div class="glass-card p-6 rounded-3xl text-center border-t-4 border-purple-500 flex flex-col justify-between">
+                <div class="glass-card p-5 rounded-3xl text-center border-t-4 border-purple-500 flex flex-col justify-between">
                     <div>
-                        <h4 class="font-black text-white mb-2 italic uppercase">iOS (Surge 5)</h4>
+                        <h4 class="font-black text-white mb-2 italic uppercase text-sm">iOS (Surge 5)</h4>
                         <p class="text-[10px] font-bold text-purple-400 mb-2 tracking-wide uppercase">Surge 5 Link</p>
-                        <div class="bg-black/40 p-2 rounded-xl border border-white/5 mb-4">
-                            <p class="text-[11px] text-slate-300 font-mono break-all selection:bg-purple-500">https://socia.gtps.cloud/ios/1234</p>
+                        <div class="bg-black/40 p-2 rounded-xl border border-white/5 mb-2">
+                            <p class="text-[10px] text-slate-300 font-mono break-all selection:bg-purple-500">https://socia.gtps.cloud/ios/1234</p>
                         </div>
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-1.5">
                         <button onclick="copyText('https://socia.gtps.cloud/ios/1234')" class="w-full py-2.5 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy URL Surge</button>
                         <button onclick="openModal('modal-ios')" class="w-full py-2.5 bg-purple-600 rounded-xl font-black text-[10px] text-white uppercase hover:bg-purple-500 transition shadow-lg">Lihat Tutorial</button>
                     </div>
                 </div>
 
-                <div class="glass-card p-6 rounded-3xl text-center border-t-4 border-orange-500 flex flex-col justify-between">
+                <div class="glass-card p-5 rounded-3xl text-center border-t-4 border-orange-500 flex flex-col justify-between">
                     <div>
-                        <h4 class="font-black text-white mb-2 italic uppercase">macOS</h4>
+                        <h4 class="font-black text-white mb-2 italic uppercase text-sm">macOS</h4>
                         <p class="text-[10px] font-bold text-orange-400 mb-2 tracking-wide uppercase">Hosts Data</p>
-                        <div class="bg-black/40 p-2 rounded-xl border border-white/5 mb-4 text-left">
-                            <code class="text-[10px] text-orange-400 font-mono block leading-relaxed whitespace-pre">91.134.85.13 growtopia1.com&#10;91.134.85.13 growtopia2.com&#10;91.134.85.13 www.growtopia1.com&#10;91.134.85.13 www.growtopia2.com</code>
+                        <div class="bg-black/40 p-2 rounded-xl border border-white/5 mb-2 text-left">
+                            <code class="text-[9px] text-orange-400 font-mono block leading-relaxed whitespace-pre">91.134.85.13 growtopia1.com&#10;91.134.85.13 growtopia2.com&#10;91.134.85.13 www.growtopia1.com&#10;91.134.85.13 www.growtopia2.com</code>
                         </div>
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-1.5">
                         <button onclick="copyText('91.134.85.13 growtopia1.com\n91.134.85.13 growtopia2.com\n91.134.85.13 www.growtopia1.com\n91.134.85.13 www.growtopia2.com')" class="w-full py-2.5 bg-zinc-800 rounded-xl font-bold text-[10px] text-white uppercase hover:bg-zinc-700 transition">Copy Hosts</button>
                         <button onclick="openModal('modal-macos')" class="w-full py-2.5 bg-orange-600 rounded-xl font-black text-[10px] text-white uppercase hover:bg-orange-500 transition shadow-lg">Lihat Tutorial</button>
                     </div>
