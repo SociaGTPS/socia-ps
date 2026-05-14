@@ -28,7 +28,6 @@
         .font-heading { font-family: 'Space Grotesk', sans-serif; }
         .search-container { width: 100%; max-width: 500px; margin: 15px auto; border-radius: 15px; overflow: hidden; }
 
-        /* HANYA MENGUBAH INI: display diubah ke flex permanen & ditambah padding biar ga nempel */
         .page-content { display: flex; min-height: 80vh; padding: 6rem 1rem; flex-direction: column; align-items: center; width: 100%; animation: slideUp 0.5s ease-out forwards; }
 
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -94,7 +93,7 @@
 
         <section id="p-connect" class="page-content">
             <h2 class="font-heading text-4xl uppercase italic mb-10 text-white">How to Play</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 w-full px-4">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full px-4">
                 <div class="glass-card p-8 rounded-3xl text-center border-t-4 border-green-500">
                     <h4 class="font-black text-white mb-4 italic uppercase">Android</h4>
                     <a href="https://www.mediafire.com/file/jjnsgutlodhz1zs/SociaPS.apk/file" target="_blank" class="block py-3 bg-green-600 rounded-xl font-black text-[10px] text-white uppercase shadow-lg">Download APK</a>
@@ -134,12 +133,68 @@
 
         <section id="p-faq" class="page-content">
             <h2 class="font-heading text-4xl uppercase italic mb-10 text-white">FAQ</h2>
-            <div class="glass-card p-8 rounded-[2rem] max-w-2xl w-full text-left mb-4">
-                <h4 class="text-white font-black text-base italic uppercase mb-2"> Bagaimanakah cara daftar akun?</h4>
-                <p class="text-slate-400 mb-6 italic text-sm">Kamu bisa langsung mendaftar di dalam game secara otomatis saat pertama kali login menggunakan fitur Create Account.</p>
+            <div class="max-w-3xl w-full px-4 space-y-6 text-left">
                 
-                <h4 class="text-white font-black text-base italic uppercase mb-2"> Mengapa server tidak bisa diakses?</h4>
-                <p class="text-slate-400 italic text-sm">Pastikan koneksi internet kamu stabil atau cek status server di halaman Statistic untuk memastikan server tidak sedang dalam maintenance.</p>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-blue-400 font-extrabold text-xs uppercase tracking-wider mb-4">🎮 Seputar Game & Cara Bermain</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-white font-bold text-sm uppercase italic">Q: Apa itu Socia GTPS?</h4>
+                            <p class="text-slate-400 text-sm mt-1">A: Socia GTPS adalah Growtopia Private Server yang didedikasikan untuk memberikan pengalaman bermain Growtopia yang lebih seru, stabil, dan menyenangkan. Di sini, Anda bisa menikmati berbagai fitur kustom, event menarik, dan komunitas yang ramah tanpa lag yang mengganggu.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm uppercase italic">Q: Bagaimana cara bermain di Socia GTPS?</h4>
+                            <p class="text-slate-400 text-sm mt-1">A: Caranya sangat mudah! Anda hanya perlu mendownload aplikasi Socia GTPS (tersedia untuk Android dan Windows) melalui menu <span class="text-blue-400 cursor-pointer underline font-bold" onclick="showPage('connect')">Connect</span> di atas. Buka aplikasi/game, masukkan IP resmi atau langsung daftar GrowID baru di dalam aplikasi, dan Anda siap berpetualang!</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm uppercase italic">Q: Apakah bermain di Socia GTPS gratis?</h4>
+                            <p class="text-slate-400 text-sm mt-1">A: 100% Gratis! Semua pemain memiliki kesempatan yang sama untuk bermain, berkreasi, dan menikmati semua fitur dasar di dalam server kami.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-green-400 font-extrabold text-xs uppercase tracking-wider mb-4">🔐 Akun & Keamanan</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-white font-bold text-sm uppercase italic">Q: Apakah akun GT Resmi (Ubisoft) saya aman jika bermain di sini?</h4>
+                            <p class="text-slate-400 text-sm mt-1">A: Sangat aman. Socia GTPS berdiri sepenuhnya terpisah dari server resmi Growtopia (Ubisoft). Kami tidak pernah meminta data akun resmi Anda. Namun, demi keamanan, kami sangat menyarankan Anda menggunakan GrowID dan password yang berbeda dari akun resmi Anda.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm uppercase italic">Q: Saya lupa password akun Socia GTPS saya, apa yang harus dilakukan?</h4>
+                            <p class="text-slate-400 text-sm mt-1">A: Anda bisa menggunakan fitur /recovery di dalam game atau menghubungi tim admin/moderator kami di server <span class="text-blue-400 cursor-pointer underline font-bold" onclick="showPage('community')">Discord</span> resmi dengan menyertakan bukti kepemilikan akun yang sah.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-yellow-500 font-extrabold text-xs uppercase tracking-wider mb-4">💎 Fitur & Donasi (Store)</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-white font-bold text-sm uppercase italic">Q: Apa saja fitur unggulan di Socia GTPS?</h4>
+                            <p class="text-slate-400 text-sm mt-1">A: Kami menawarkan berbagai fitur kustom: rate drop item dan gem yang seimbang, event harian/mingguan berhadiah menarik, sistem anti-cheat ketat, serta item kustom dan role keren yang bisa Anda dapatkan.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm uppercase italic">Q: Bagaimana cara melakukan donasi atau membeli item khusus?</h4>
+                            <p class="text-slate-400 text-sm mt-1">A: Anda bisa mengunjungi menu <span class="text-yellow-500 cursor-pointer underline font-bold" onclick="showPage('shop')">Store/Shop</span> di website ini atau melihat list harga lengkapnya langsung di Discord kami.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-red-400 font-extrabold text-xs uppercase tracking-wider mb-4">🛠️ Kendala Teknis & Bantuan</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-white font-bold text-sm uppercase italic">Q: Kenapa saya tidak bisa masuk ke server (Unable to Connect)?</h4>
+                            <p class="text-slate-400 text-sm mt-1">A: Biasanya disebabkan server sedang maintenance rutin, koneksi internet Anda tidak stabil, atau Anda belum memperbarui aplikasi ke versi terbaru. Silakan cek status server real-time di halaman <span class="text-blue-400 cursor-pointer underline font-bold" onclick="showPage('stats')">Statistic</span>.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm uppercase italic">Q: Saya menemukan bug atau cheater, ke mana saya harus melapor?</h4>
+                            <p class="text-slate-400 text-sm mt-1">A: Anda bisa melaporkannya melalui Ticket System di server <span class="text-blue-400 cursor-pointer underline font-bold" onclick="showPage('community')">Discord</span> resmi kami. Jangan lupa sertakan bukti berupa tangkapan layar (screenshot) atau rekaman video.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -147,19 +202,19 @@
             <h2 class="font-heading text-4xl uppercase italic mb-10 text-yellow-500">Store</h2>
             <div class="glass-card p-10 rounded-[2rem] max-w-md w-full text-center">
                 <h3 class="text-white font-black text-2xl italic uppercase mb-4">Donation & Shop</h3>
-                <p class="text-slate-400 mb-6 italic">Beli Gems, DL, atau Role VIP langsung melalui Admin WhatsApp.</p>
-                <button onclick="window.open('https://wa.me/6281525742110')" class="w-full py-4 bg-yellow-500 rounded-2xl font-black text-black uppercase shadow-xl">Contact Store</button>
+                <p class="text-slate-400 mb-6 italic">List harga role, gems, dan VIP ada di Discord. Yuk, join Discord sekarang!</p>
+                <button onclick="window.open('https://discord.gg/A75xzKjSrM')" class="w-full py-4 bg-blue-600 rounded-2xl font-black text-white uppercase shadow-xl mb-3">Join Discord</button>
+                <button onclick="window.open('https://wa.me/6281525742110')" class="w-full py-4 bg-yellow-500 rounded-2xl font-black text-black uppercase shadow-xl">Contact Store (WA)</button>
             </div>
         </section>
 
     </main>
 
     <footer class="mt-20 py-10 text-center text-slate-500 text-[10px] font-bold uppercase tracking-widest bg-black/60">
-        © 2026 SOCIA PS. POWERED BY SOCIA.
+        © 2026 SOCIA PS. POWERED BY SOCIA GTPS.
     </footer>
 
     <script>
-        // HANYA MENGUBAH INI: Fungsi dipersingkat khusus untuk scroll otomatis ke section tujuan
         function showPage(pageId) {
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
             const nav = document.getElementById('n-' + pageId);
@@ -167,7 +222,7 @@
 
             const target = document.getElementById('p-' + pageId);
             if(target) {
-                const offset = 80; // Ukuran navbar kamu biar pas berhenti ga nutupin judul
+                const offset = 80; 
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }
